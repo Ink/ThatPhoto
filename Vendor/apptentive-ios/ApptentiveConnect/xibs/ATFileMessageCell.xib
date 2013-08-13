@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
+	<data>
+		<int key="IBDocument.SystemTarget">1552</int>
+		<string key="IBDocument.SystemVersion">12C60</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
+		<string key="IBDocument.AppKitVersion">1187.34</string>
+		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
+			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+			<string key="NS.object.0">2083</string>
+		</object>
+		<array key="IBDocument.IntegratedClassDependencies">
+			<string>IBProxyObject</string>
+			<string>IBUIImageView</string>
+			<string>IBUILabel</string>
+			<string>IBUIView</string>
+		</array>
+		<array key="IBDocument.PluginDependencies">
+			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+		</array>
+		<object class="NSMutableDictionary" key="IBDocument.Metadata">
+			<string key="NS.key.0">PluginDependencyRecalculationVersion</string>
+			<integer value="1" key="NS.object.0"/>
+		</object>
+		<array class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
+			<object class="IBProxyObject" id="372490531">
+				<string key="IBProxiedObjectIdentifier">IBFilesOwner</string>
+				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+			</object>
+			<object class="IBProxyObject" id="975951072">
+				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
+				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+			</object>
+			<object class="IBUIView" id="1048916289">
+				<reference key="NSNextResponder"/>
+				<int key="NSvFlags">274</int>
+				<array class="NSMutableArray" key="NSSubviews">
+					<object class="IBUIImageView" id="217876595">
+						<reference key="NSNextResponder" ref="1048916289"/>
+						<int key="NSvFlags">265</int>
+						<string key="NSFrame">{{425, 56}, {44, 44}}</string>
+						<reference key="NSSuperview" ref="1048916289"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+					</object>
+					<object class="IBUIView" id="632312807">
+						<reference key="NSNextResponder" ref="1048916289"/>
+						<int key="NSvFlags">274</int>
+						<array class="NSMutableArray" key="NSSubviews">
+							<object class="IBUIImageView" id="505642654">
+								<reference key="NSNextResponder" ref="632312807"/>
+								<int key="NSvFlags">274</int>
+								<string key="NSFrameSize">{397, 89}</string>
+								<reference key="NSSuperview" ref="632312807"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="217876595"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+							</object>
+							<object class="IBUIView" id="372228068">
+								<reference key="NSNextResponder" ref="632312807"/>
+								<int key="NSvFlags">274</int>
+								<string key="NSFrame">{{10, 10}, {371, 69}}</string>
+								<reference key="NSSuperview" ref="632312807"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="632312807"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<object class="NSColor" key="IBUIBackgroundColor">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MQA</bytes>
+									<object class="NSColorSpace" key="NSCustomColorSpace">
+										<int key="NSID">2</int>
+									</object>
+								</object>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+							</object>
+						</array>
+						<string key="NSFrame">{{20, 20}, {397, 89}}</string>
+						<reference key="NSSuperview" ref="1048916289"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="505642654"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<object class="NSColor" key="IBUIBackgroundColor" id="20535154">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MCAwAA</bytes>
+						</object>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+					</object>
+					<object class="IBUILabel" id="689244391">
+						<reference key="NSNextResponder" ref="1048916289"/>
+						<int key="NSvFlags">290</int>
+						<string key="NSFrameSize">{478, 20}</string>
+						<reference key="NSSuperview" ref="1048916289"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="372228068"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<string key="IBUIText">October 4, 1980</string>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC41NDcwODcyOTYyIDAuNTQ3MDg3Mjk2MiAwLjU0NzA4NzI5NjIAA</bytes>
+						</object>
+						<nil key="IBUIHighlightedColor"/>
+						<object class="NSColor" key="IBUIShadowColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MSAxIDEAA</bytes>
+						</object>
+						<string key="IBUIShadowOffset">{0, 1}</string>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<int key="IBUITextAlignment">1</int>
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
+							<int key="type">2</int>
+							<double key="pointSize">13</double>
+						</object>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica-Bold</string>
+							<double key="NSSize">13</double>
+							<int key="NSfFlags">16</int>
+						</object>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+					</object>
+				</array>
+				<string key="NSFrameSize">{478, 109}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView" ref="689244391"/>
+				<reference key="IBUIBackgroundColor" ref="20535154"/>
+				<bool key="IBUIOpaque">NO</bool>
+				<string key="IBUIRestorationIdentifier">ATFileMessageCell</string>
+				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+			</object>
+		</array>
+		<object class="IBObjectContainer" key="IBDocument.Objects">
+			<array class="NSMutableArray" key="connectionRecords">
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">userFileMessageCell</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1048916289"/>
+					</object>
+					<int key="connectionID">43</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">dateLabel</string>
+						<reference key="source" ref="1048916289"/>
+						<reference key="destination" ref="689244391"/>
+					</object>
+					<int key="connectionID">41</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">userIcon</string>
+						<reference key="source" ref="1048916289"/>
+						<reference key="destination" ref="217876595"/>
+					</object>
+					<int key="connectionID">42</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">imageContainer</string>
+						<reference key="source" ref="1048916289"/>
+						<reference key="destination" ref="372228068"/>
+					</object>
+					<int key="connectionID">46</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">chatBubbleContainer</string>
+						<reference key="source" ref="1048916289"/>
+						<reference key="destination" ref="632312807"/>
+					</object>
+					<int key="connectionID">51</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">messageBubbleImage</string>
+						<reference key="source" ref="1048916289"/>
+						<reference key="destination" ref="505642654"/>
+					</object>
+					<int key="connectionID">52</int>
+				</object>
+			</array>
+			<object class="IBMutableOrderedSet" key="objectRecords">
+				<array key="orderedObjects">
+					<object class="IBObjectRecord">
+						<int key="objectID">0</int>
+						<array key="object" id="0"/>
+						<reference key="children" ref="1000"/>
+						<nil key="parent"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-1</int>
+						<reference key="object" ref="372490531"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">File's Owner</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-2</int>
+						<reference key="object" ref="975951072"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">4</int>
+						<reference key="object" ref="1048916289"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="689244391"/>
+							<reference ref="217876595"/>
+							<reference ref="632312807"/>
+						</array>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">File Message Cell</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">6</int>
+						<reference key="object" ref="689244391"/>
+						<array class="NSMutableArray" key="children"/>
+						<reference key="parent" ref="1048916289"/>
+						<string key="objectName">Date Label</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">8</int>
+						<reference key="object" ref="217876595"/>
+						<array class="NSMutableArray" key="children"/>
+						<reference key="parent" ref="1048916289"/>
+						<string key="objectName">Profile Image View</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">47</int>
+						<reference key="object" ref="632312807"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="505642654"/>
+							<reference ref="372228068"/>
+						</array>
+						<reference key="parent" ref="1048916289"/>
+						<string key="objectName">Chat Bubble Container</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">50</int>
+						<reference key="object" ref="505642654"/>
+						<reference key="parent" ref="632312807"/>
+						<string key="objectName">Chat Bubble Image View</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">45</int>
+						<reference key="object" ref="372228068"/>
+						<reference key="parent" ref="632312807"/>
+						<string key="objectName">Image Container</string>
+					</object>
+				</array>
+			</object>
+			<dictionary class="NSMutableDictionary" key="flattenedProperties">
+				<string key="-1.CustomClassName">ATMessageCenterViewController</string>
+				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="-2.CustomClassName">UIResponder</string>
+				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="4.CustomClassName">ATFileMessageCell</string>
+				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="45.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="47.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="50.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="8.CustomClassName">ATNetworkImageView</string>
+				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+			</dictionary>
+			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
+			<nil key="activeLocalization"/>
+			<dictionary class="NSMutableDictionary" key="localizations"/>
+			<nil key="sourceID"/>
+			<int key="maxID">52</int>
+		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">ATFakeMessageCell</string>
+					<string key="superclassName">UITableViewCell</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="containerView">UIView</string>
+						<string key="dateLabel">UILabel</string>
+						<string key="grayLineView">UIView</string>
+						<string key="messageText">TTTAttributedLabel</string>
+						<string key="subjectText">TTTAttributedLabel</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="containerView">
+							<string key="name">containerView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="dateLabel">
+							<string key="name">dateLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="grayLineView">
+							<string key="name">grayLineView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="messageText">
+							<string key="name">messageText</string>
+							<string key="candidateClassName">TTTAttributedLabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="subjectText">
+							<string key="name">subjectText</string>
+							<string key="candidateClassName">TTTAttributedLabel</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ATFakeMessageCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ATFileMessageCell</string>
+					<string key="superclassName">UITableViewCell</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="chatBubbleContainer">UIView</string>
+						<string key="dateLabel">UILabel</string>
+						<string key="imageContainer">UIView</string>
+						<string key="messageBubbleImage">UIImageView</string>
+						<string key="userIcon">ATNetworkImageView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="chatBubbleContainer">
+							<string key="name">chatBubbleContainer</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="dateLabel">
+							<string key="name">dateLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="imageContainer">
+							<string key="name">imageContainer</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="messageBubbleImage">
+							<string key="name">messageBubbleImage</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="userIcon">
+							<string key="name">userIcon</string>
+							<string key="candidateClassName">ATNetworkImageView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ATFileMessageCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ATMessageCenterViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="cameraPressed:">id</string>
+						<string key="donePressed:">id</string>
+						<string key="showInfoView:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="cameraPressed:">
+							<string key="name">cameraPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="donePressed:">
+							<string key="name">donePressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showInfoView:">
+							<string key="name">showInfoView:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="attachmentShadowView">UIImageView</string>
+						<string key="attachmentView">UIView</string>
+						<string key="cameraButton">UIButton</string>
+						<string key="containerView">UIView</string>
+						<string key="developerCell">ATTextMessageUserCell</string>
+						<string key="emailButton">UIButton</string>
+						<string key="fakeCell">ATFakeMessageCell</string>
+						<string key="iconButton">UIButton</string>
+						<string key="inputContainerView">UIView</string>
+						<string key="locationButton">UIButton</string>
+						<string key="tableView">UITableView</string>
+						<string key="userCell">ATTextMessageUserCell</string>
+						<string key="userFileMessageCell">ATFileMessageCell</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="attachmentShadowView">
+							<string key="name">attachmentShadowView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="attachmentView">
+							<string key="name">attachmentView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="cameraButton">
+							<string key="name">cameraButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="containerView">
+							<string key="name">containerView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="developerCell">
+							<string key="name">developerCell</string>
+							<string key="candidateClassName">ATTextMessageUserCell</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="emailButton">
+							<string key="name">emailButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="fakeCell">
+							<string key="name">fakeCell</string>
+							<string key="candidateClassName">ATFakeMessageCell</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="iconButton">
+							<string key="name">iconButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="inputContainerView">
+							<string key="name">inputContainerView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="locationButton">
+							<string key="name">locationButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="tableView">
+							<string key="name">tableView</string>
+							<string key="candidateClassName">UITableView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="userCell">
+							<string key="name">userCell</string>
+							<string key="candidateClassName">ATTextMessageUserCell</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="userFileMessageCell">
+							<string key="name">userFileMessageCell</string>
+							<string key="candidateClassName">ATFileMessageCell</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ATMessageCenterViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ATNetworkImageView</string>
+					<string key="superclassName">UIImageView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ATNetworkImageView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ATTextMessageUserCell</string>
+					<string key="superclassName">UITableViewCell</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="chatBubbleContainer">UIView</string>
+						<string key="composingBubble">UIImageView</string>
+						<string key="dateLabel">UILabel</string>
+						<string key="messageBubbleImage">UIImageView</string>
+						<string key="messageText">TTTAttributedLabel</string>
+						<string key="userIcon">ATNetworkImageView</string>
+						<string key="usernameLabel">UILabel</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="chatBubbleContainer">
+							<string key="name">chatBubbleContainer</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="composingBubble">
+							<string key="name">composingBubble</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="dateLabel">
+							<string key="name">dateLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="messageBubbleImage">
+							<string key="name">messageBubbleImage</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="messageText">
+							<string key="name">messageText</string>
+							<string key="candidateClassName">TTTAttributedLabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="userIcon">
+							<string key="name">userIcon</string>
+							<string key="candidateClassName">ATNetworkImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="usernameLabel">
+							<string key="name">usernameLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ATTextMessageUserCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">TTTAttributedLabel</string>
+					<string key="superclassName">UILabel</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/TTTAttributedLabel.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
+		<int key="IBDocument.localizationMode">0</int>
+		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
+		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
+		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<string key="IBCocoaTouchPluginVersion">2083</string>
+	</data>
+</archive>

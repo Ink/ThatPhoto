@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ATAutomatedMessage" representedClassName="ATAutomatedMessage" parentEntity="ATTextMessage" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ATEvent" representedClassName="ATEvent" parentEntity="ATRecord" syncable="YES">
+        <attribute name="dictionaryData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pendingEventID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="ATFileAttachment" representedClassName="ATFileAttachment" syncable="YES">
+        <attribute name="localPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mimeType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="source" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="transient" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="userVisible" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <relationship name="fileMessage" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ATFileMessage" inverseName="fileAttachment" inverseEntity="ATFileMessage" syncable="YES"/>
+    </entity>
+    <entity name="ATFileMessage" representedClassName="ATFileMessage" parentEntity="ATMessage" syncable="YES">
+        <relationship name="fileAttachment" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ATFileAttachment" inverseName="fileMessage" inverseEntity="ATFileAttachment" syncable="YES"/>
+    </entity>
+    <entity name="ATMessage" representedClassName="ATMessage" isAbstract="YES" parentEntity="ATRecord" syncable="YES">
+        <attribute name="errorMessageJSON" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="errorOccurred" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="pendingMessageID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="pendingState" attributeType="Integer 32" defaultValueString="YES" syncable="YES"/>
+        <attribute name="priority" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="seenByUser" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="sentByUser" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <relationship name="displayTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ATMessageDisplayType" inverseName="messages" inverseEntity="ATMessageDisplayType" syncable="YES"/>
+        <relationship name="sender" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ATMessageSender" inverseName="sentMessages" inverseEntity="ATMessageSender" syncable="YES"/>
+    </entity>
+    <entity name="ATMessageDisplayType" representedClassName="ATMessageDisplayType" syncable="YES">
+        <attribute name="displayType" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ATMessage" inverseName="displayTypes" inverseEntity="ATMessage" syncable="YES"/>
+    </entity>
+    <entity name="ATMessageSender" representedClassName="ATMessageSender" syncable="YES">
+        <attribute name="apptentiveID" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="emailAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profilePhotoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="sentMessages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ATMessage" inverseName="sender" inverseEntity="ATMessage" syncable="YES"/>
+    </entity>
+    <entity name="ATRecord" representedClassName="ATRecord" isAbstract="YES" syncable="YES">
+        <attribute name="apptentiveID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="clientCreationTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="clientCreationTimezone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="clientCreationUTCOffset" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="creationTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="ATTextMessage" representedClassName="ATTextMessage" parentEntity="ATMessage" syncable="YES">
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ATUpgradeRequestMessage" representedClassName="ATUpgradeRequestMessage" parentEntity="ATTextMessage" syncable="YES">
+        <attribute name="forced" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ATAutomatedMessage" positionX="171" positionY="351" width="128" height="58"/>
+        <element name="ATEvent" positionX="-92" positionY="-45" width="128" height="90"/>
+        <element name="ATFileAttachment" positionX="-182" positionY="228" width="128" height="150"/>
+        <element name="ATFileMessage" positionX="18" positionY="327" width="128" height="60"/>
+        <element name="ATMessage" positionX="144" positionY="-45" width="128" height="180"/>
+        <element name="ATMessageDisplayType" positionX="450" positionY="42" width="128" height="75"/>
+        <element name="ATMessageSender" positionX="450" positionY="159" width="128" height="120"/>
+        <element name="ATRecord" positionX="144" positionY="-219" width="128" height="120"/>
+        <element name="ATTextMessage" positionX="178" positionY="228" width="128" height="60"/>
+        <element name="ATUpgradeRequestMessage" positionX="322" positionY="327" width="164" height="60"/>
+    </elements>
+</model>

@@ -2,8 +2,8 @@
 //  UIImageView+Ink.h
 //  INK Workflow Framework
 //
-//  Created by Jonathan Uy on 5/17/13.
-//  Copyright (c) 2013 Computer Club. All rights reserved.
+//  Created by Liyan David Chang on 5/17/13.
+//  Copyright (c) 2013 Ink. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

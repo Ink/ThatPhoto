@@ -3,7 +3,7 @@
 //  INK
 //
 //  Created by Brett van Zuiden on 8/11/13.
-//  Copyright (c) 2013 Computer Club. All rights reserved.
+//  Copyright (c) 2013 Ink. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

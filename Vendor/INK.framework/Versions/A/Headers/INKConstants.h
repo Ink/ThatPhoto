@@ -2,8 +2,8 @@
 //  InkConstants.h
 //  InkCore
 //
-//  Created by Jonathan Uy on 6/4/13.
-//  Copyright (c) 2013 Computer Club. All rights reserved.
+//  Created by Liyan David Chang on 6/4/13.
+//  Copyright (c) 2013 Ink. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

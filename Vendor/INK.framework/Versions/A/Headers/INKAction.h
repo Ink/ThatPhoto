@@ -2,8 +2,8 @@
 //  INKAction.h
 //  InkCore
 //
-//  Created by Jonathan Uy on 5/25/13.
-//  Copyright (c) 2013 Computer Club. All rights reserved.
+//  Created by Liyan David Chang on 5/25/13.
+//  Copyright (c) 2013 Ink. All rights reserved.
 //
 //  A specific app-action pair to perform
 //

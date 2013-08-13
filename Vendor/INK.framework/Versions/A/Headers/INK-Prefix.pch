@@ -1,11 +1,7 @@
-//
-// Prefix header for all source files of the 'KYCircleMenuDemo' target in the 'KYCircleMenuDemo' project
-//
-
 #import <Availability.h>
 
-#ifndef __IPHONE_3_0
-#warning "This project uses features only available in iOS SDK 3.0 and later."
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
 
 #ifdef __OBJC__
@@ -13,5 +9,5 @@
   #import <Foundation/Foundation.h>
   #import <SystemConfiguration/SystemConfiguration.h>
   #import <MobileCoreServices/MobileCoreServices.h>
-  #import "InternalConstants.h"
+  #import "InternalWorkflowConstants.h"
 #endif

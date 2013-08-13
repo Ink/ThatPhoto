@@ -3,7 +3,7 @@
 //  INK
 //
 //  Created by Brett van Zuiden on 7/28/13.
-//  Copyright (c) 2013 Computer Club. All rights reserved.
+//  Copyright (c) 2013 Ink. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -15,9 +15,14 @@
 
 @interface INKCoreManager : NSObject
 
-@property NSString *callbackURLScheme;
-@property (readonly) INKApp *callingApp;
-@property (readonly) NSString *currentRequestId;
+@property (strong, atomic) NSString *callbackURLScheme;
+@property (readonly,atomic) INKApp *callingApp;
+@property (readonly,atomic) NSString *currentRequestId;
+@property (readonly,atomic) INKBlob *currentBlob;
+
+// RCOH THIS IS REQUIRED FOR BACKWARDS COMPATIBILITY. REMOVO PRONTO.
+@property (copy,atomic) INKActionCallbackBlock ios6ReturnBlock;
+@property (strong,atomic) INKAction *ios6Action;
 
 //singleton
 + (id) sharedManager;
@@ -39,8 +44,6 @@
 - (void)returnBlob:(INKBlob *)blob;
 - (void)returnWithError:(NSError *)error;
 
-- (INKBlob*) blobFromPasteboard;
-
 // Returns whether app was launched via ink and this should return in the corresponding way
 - (BOOL)appShouldReturn;
 
@@ -50,10 +53,13 @@
 - (BOOL)handleOpenURL:(NSURL *)url;
 - (NSURL*)constructIACURL:(INKAction*)action;
 - (NSURL*)constructReturnIACURL:(INKAction*)action requestId:(NSString*)requestId;
-- (void)registerForRequest:(NSString*)requestId returnHandler:(INKActionCallbackBlock)handler;
-- (NSString*) createRequestId;
+- (NSURL *)constructIOS6ReturnURL:(INKAction*)action withRequestId:(NSString *)requestId;
+- (NSURL *)constructIOS6OpenURL: (INKAction *) action withRequestId:(NSString *)requestId;
 
-- (void) runBackgroundProcess;
+- (void)registerForRequest:(NSString*)requestId returnHandler:(INKActionCallbackBlock)handler;
+- (NSString*)createRequestId;
+
+- (void) clearCallingApp;
 
 //A fallback method for upgrade paths
 - (void) registerAdditionalURLScheme:(NSString*) oldScheme;

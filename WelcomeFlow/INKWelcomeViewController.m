@@ -15,20 +15,20 @@
 CGFloat const scrollViewHeight = 578.f;
 CGFloat const scrollViewMargin = 0.f;
 
-NSString *pasteboardDataName = @"com.inkmobility.hasRunWelcomeFlow";
+NSString *nsuserdefaultsHasRunFlowKeyName = @"com.inkmobility.hasRunWelcomeFlow";
 
 @implementation INKWelcomeViewController
 @synthesize pageScrollView, nextViewController;
 
 + (BOOL) shouldRunWelcomeFlow {
-    UIPasteboard *pasteboardData = [UIPasteboard pasteboardWithName:pasteboardDataName create:YES];
-    return ![[pasteboardData string] isEqual: @"NO"];
+    //You should run if not yet run
+    return ![[NSUserDefaults standardUserDefaults] boolForKey:nsuserdefaultsHasRunFlowKeyName];
 }
 
 + (void) setShouldRunWelcomeFlow:(BOOL)should {
-    NSString *data = should ? @"YES" : @"NO";
-    UIPasteboard *pasteboardData = [UIPasteboard pasteboardWithName:pasteboardDataName create:YES];
-    [pasteboardData setString:data];
+    //ShouldRun is opposite of hasRun
+    [[NSUserDefaults standardUserDefaults] setBool:!should forKey:nsuserdefaultsHasRunFlowKeyName];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -1,14 +1,14 @@
 //
-//  AFAppDelegate.m
-//  AviaryDemo-iOS
+//  ThatPhotoAppDelegate.m
+//  ThatPhoto
 //
-//  Created by Michael Vitrano on 1/23/13.
-//  Copyright (c) 2013 Aviary. All rights reserved.
+//  Created by Brett van Zuiden
+//  Copyright (c) 2013 Ink (Cloudtop Inc). All rights reserved.
 //
 
-#import "PWAppDelegate.h"
+#import "ThatPhotoAppDelegate.h"
 
-#import "PWMainViewController.h"
+#import "TPMainViewController.h"
 #import <INK/INK.h>
 
 #import "ATConnect.h"
@@ -16,7 +16,7 @@
 #import "INKWelcomeViewController.h"
 
 
-@implementation PWAppDelegate
+@implementation ThatPhotoAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -25,39 +25,40 @@
     ATConnect *connection = [ATConnect sharedConnection];
     connection.apiKey = kApptentiveAPIKey;
     
-    PWMainViewController * viewController;
-    viewController = [[PWMainViewController alloc] initWithNibName:@"PWMainViewController_iPad" bundle:nil];
+    TPMainViewController * viewController;
+    viewController = [[TPMainViewController alloc] initWithNibName:@"TPMainViewController_iPad" bundle:nil];
     
+    //Setting up Ink with the ThatPhoto app key
     [Ink setupWithAppKey:@"AjTXjeBephotoqTdTUPz"];
+    //XXX - Because we now use the ink-<apikey> url schemes, apps should not need to register
+    //additional url schemes that they listen for Ink actions on. This is just for backwards compatibility
+    //with the earliest versions of the sample apps, and should be removed asap.
     [[INKCoreManager sharedManager] registerAdditionalURLScheme:@"thatphoto"];
     
+    //Registering the action to edit a photo in this app
     INKAction *edit = [INKAction action:@"Edit Image in ThatPhoto" type:INKActionType_Edit];
     [Ink registerAction:edit withTarget:viewController selector:@selector(launchEditorWithBlob:action:error:)];
-    
+
+    //Registering the action to save a photo to the camera roll
     INKAction *save = [INKAction action:@"Save to your Camera Roll" type:INKActionType_Save];
     [Ink registerAction:save withTarget:viewController selector:@selector(saveBlob:action:error:)];
     
-    INKAction *ret = [INKAction action:@"Save to PhotoWheel" type:INKActionType_Return];
+    //Registering what happens when we send a photo out of that photo into another app and return back.
+    INKAction *ret = [INKAction action:@"Save to ThatPhoto" type:INKActionType_Return];
     [Ink registerAction:ret withTarget:viewController selector:@selector(saveBlob:action:error:)];
 
     [self setViewController:viewController];
-    
-    if ([INKWelcomeViewController shouldRunWelcomeFlow]) {
-        INKWelcomeViewController * welcomeViewController;
-        welcomeViewController = [[INKWelcomeViewController alloc] initWithNibName:@"INKWelcomeViewController" bundle:nil];
-        
-        welcomeViewController.nextViewController = viewController;
-        [[self window] setRootViewController:welcomeViewController];
-    } else {
-        [[self window] setRootViewController:viewController];
-    }
-
+    [[self window] setRootViewController:viewController];
     [[self window] makeKeyAndVisible];
+    
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    //When launched, we first hand the request out to Ink to see if it can handle it
     if ([Ink openURL:url sourceApplication:sourceApplication annotation:annotation]) {
+        //If we're opened via a url, make sure we don't show welcome flow, etc. - user should be taken directly to action
+        [INKWelcomeViewController setShouldRunWelcomeFlow:NO];
         return YES;
     }
     return NO;

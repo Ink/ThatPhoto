@@ -19,21 +19,21 @@ ThatPhoto is also currently available on the [App Store](https://itunes.apple.co
 ![ThatPhoto in action](http://a1.mzstatic.com/us/r30/Purple4/v4/bd/07/1a/bd071a85-5bda-e508-65fe-55d3c37c154f/screen480x480.jpeg)
 
 License
-=======
+-------
 ThatPhoto is an open-source iOS application built by [Ink](www.inkmobility.com), released under the MIT License. You are welcome to fork this app, and pull requests are always encouraged.
 
 We do builds every other Thursday and submit the apps to the iOS App Store.
 
 
 Ink Integration Details
-=======================
+-----------------------
 The Ink mobile framework adds the ability to take photos from within ThatPhoto and work with them in other applications. Plus, ThatPhoto can accept photos via Ink, so you can use ThatPhoto to edit images and/or save them to your camera roll. ThatPhoto integrates with Ink in two locations:
 
   1. ThatPhotoAppDelegate registers incoming actions.
   2. ThatPhotomainViewController provides the handlers for the incoming actions, as well as registers the hooks on the images to open them in the Ink workspace.
 
 What are the "That" Apps?
-=============================
+-------------------------
 
 To demonstrate the power Ink mobile framework, Ink created the "ThatApp" suite of sample apps. Along with ThatPhoto, there is also ThatInbox for reading your mail, ThatPDF for editing your documents and ThatCloud for accessing files stored online. But we want the apps to do more than just showcase the Ink Mobile Framework. That's why we're releasing the apps open source. 
 
@@ -59,7 +59,7 @@ As iOS developers, we leverage an incredible amount of software created by the c
   Trying to get a job? Point an employer to your merged pull requests to the sample apps as a demonstration of your ability to contribute to real apps.
   
 Contributors
-============
+------------
 Many thanks to the people who have helped make this app:
 
 * Brett van Zuiden - [@brettcvz](https://github.com/brettcvz)

@@ -7,23 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <INK/InkCore.h>
+#import <INK/Ink.h>
 #import <QuickLook/QuickLook.h>
 #import "iCarousel.h"
 
-@interface PWMainViewController : UIViewController
+@interface TPMainViewController : UIViewController
 
 
 @property (strong, nonatomic) IBOutlet UIButton *editButton;
 @property (strong, nonatomic) IBOutlet UIButton *inkButton;
-@property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (nonatomic, retain) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) IBOutlet UILabel *albumName;
 @property (strong, nonatomic) UISlider *albumSlider;
 
 @property (atomic, strong) NSArray *albums;
 
-- (void) launchEditorWithBlob:(INKBlob *)blob;
+- (void) launchEditorWithBlob:(INKBlob *)blob action:(INKAction*)action error:(NSError*)error;
 
 @end

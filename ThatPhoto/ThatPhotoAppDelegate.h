@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PWAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ThatPhotoAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

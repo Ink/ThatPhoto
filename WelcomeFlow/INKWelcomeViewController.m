@@ -1,9 +1,9 @@
 //
-//  INKWelcomeViewController.m
-//  ThatPhoto
+//  INKWelcomeViewController.h
+//  ThatPDF
 //
 //  Created by Brett van Zuiden on 8/8/13.
-//  Copyright (c) 2013 Aviary. All rights reserved.
+//  Copyright (c) 2013 Ink. All rights reserved.
 //
 
 #import "INKWelcomeViewController.h"
@@ -18,7 +18,7 @@ CGFloat const scrollViewMargin = 0.f;
 NSString *nsuserdefaultsHasRunFlowKeyName = @"com.inkmobility.hasRunWelcomeFlow";
 
 @implementation INKWelcomeViewController
-@synthesize pageScrollView, nextViewController;
+@synthesize pageScrollView;
 
 + (BOOL) shouldRunWelcomeFlow {
     //You should run if not yet run
@@ -90,7 +90,7 @@ NSString *nsuserdefaultsHasRunFlowKeyName = @"com.inkmobility.hasRunWelcomeFlow"
 
 - (IBAction)skipWelcomeFlow:(id)sender {
     [INKWelcomeViewController setShouldRunWelcomeFlow:NO];
-    [[[UIApplication sharedApplication] keyWindow] setRootViewController:self.nextViewController];
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 

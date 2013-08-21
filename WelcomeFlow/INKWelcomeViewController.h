@@ -1,9 +1,9 @@
 //
 //  INKWelcomeViewController.h
-//  ThatPhoto
+//  ThatPDF
 //
 //  Created by Brett van Zuiden on 8/8/13.
-//  Copyright (c) 2013 Aviary. All rights reserved.
+//  Copyright (c) 2013 Ink. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -11,7 +11,6 @@
 
 @interface INKWelcomeViewController : UIViewController
 @property IBOutlet PagedScrollView *pageScrollView;
-@property UIViewController *nextViewController;
 
 + (BOOL) shouldRunWelcomeFlow;
 + (void) setShouldRunWelcomeFlow:(BOOL)should;

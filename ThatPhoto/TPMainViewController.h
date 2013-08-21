@@ -1,14 +1,13 @@
 //
-//  AFSDKDemoViewController.h
-//  AviaryDemo-iOS
+//  TPMainViewController.h
+//  ThatPhoto
 //
-//  Created by Michael Vitrano on 1/23/13.
-//  Copyright (c) 2013 Aviary. All rights reserved.
+//  Created by Brett van Zuiden
+//  Copyright (c) 2013 Ink (Cloudtop Inc). All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <INK/Ink.h>
-#import <QuickLook/QuickLook.h>
 #import "iCarousel.h"
 
 @interface TPMainViewController : UIViewController

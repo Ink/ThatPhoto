@@ -18,7 +18,6 @@
 		027AB27417B9DF3E007171B1 /* TPMainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027AB24A17B9DF3E007171B1 /* TPMainViewController_iPad.xib */; };
 		027AB27617B9DF3E007171B1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 027AB24E17B9DF3E007171B1 /* background.png */; };
 		027AB27717B9DF3E007171B1 /* background@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 027AB24F17B9DF3E007171B1 /* background@2X.png */; };
-		027AB27817B9DF3E007171B1 /* border.png in Resources */ = {isa = PBXBuildFile; fileRef = 027AB25017B9DF3E007171B1 /* border.png */; };
 		027AB27917B9DF3E007171B1 /* blue_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 027AB25217B9DF3E007171B1 /* blue_button.png */; };
 		027AB27A17B9DF3E007171B1 /* blue_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 027AB25317B9DF3E007171B1 /* blue_button@2x.png */; };
 		027AB27B17B9DF3E007171B1 /* blue_button_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 027AB25417B9DF3E007171B1 /* blue_button_pressed.png */; };
@@ -124,7 +123,6 @@
 		027AB24A17B9DF3E007171B1 /* TPMainViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPMainViewController_iPad.xib; sourceTree = "<group>"; };
 		027AB24E17B9DF3E007171B1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		027AB24F17B9DF3E007171B1 /* background@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2X.png"; sourceTree = "<group>"; };
-		027AB25017B9DF3E007171B1 /* border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = border.png; sourceTree = "<group>"; };
 		027AB25217B9DF3E007171B1 /* blue_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_button.png; sourceTree = "<group>"; };
 		027AB25317B9DF3E007171B1 /* blue_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue_button@2x.png"; sourceTree = "<group>"; };
 		027AB25417B9DF3E007171B1 /* blue_button_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_button_pressed.png; sourceTree = "<group>"; };
@@ -282,7 +280,6 @@
 			children = (
 				027AB24E17B9DF3E007171B1 /* background.png */,
 				027AB24F17B9DF3E007171B1 /* background@2X.png */,
-				027AB25017B9DF3E007171B1 /* border.png */,
 			);
 			path = "Background Images";
 			sourceTree = "<group>";
@@ -554,7 +551,6 @@
 				027AB27417B9DF3E007171B1 /* TPMainViewController_iPad.xib in Resources */,
 				027AB27617B9DF3E007171B1 /* background.png in Resources */,
 				027AB27717B9DF3E007171B1 /* background@2X.png in Resources */,
-				027AB27817B9DF3E007171B1 /* border.png in Resources */,
 				027AB27917B9DF3E007171B1 /* blue_button.png in Resources */,
 				027AB27A17B9DF3E007171B1 /* blue_button@2x.png in Resources */,
 				027AB27B17B9DF3E007171B1 /* blue_button_pressed.png in Resources */,

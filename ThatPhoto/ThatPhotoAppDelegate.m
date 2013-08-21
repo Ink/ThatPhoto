@@ -1,9 +1,9 @@
 //
-//  AFAppDelegate.m
-//  AviaryDemo-iOS
+//  ThatPhotoAppDelegate.m
+//  ThatPhoto
 //
-//  Created by Michael Vitrano on 1/23/13.
-//  Copyright (c) 2013 Aviary. All rights reserved.
+//  Created by Brett van Zuiden
+//  Copyright (c) 2013 Ink (Cloudtop Inc). All rights reserved.
 //
 
 #import "ThatPhotoAppDelegate.h"

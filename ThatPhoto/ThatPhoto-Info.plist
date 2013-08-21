@@ -50,6 +50,8 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Deprecated</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>thatphoto</string>

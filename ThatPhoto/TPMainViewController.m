@@ -1,9 +1,12 @@
 //
-//  AFSDKDemoViewController.m
-//  AviaryDemo-iOS
+//  TPMainViewController.h
+//  ThatPhoto
 //
-//  Created by Michael Vitrano on 1/23/13.
-//  Copyright (c) 2013 Aviary. All rights reserved.
+//  Created by Brett van Zuiden
+//  Copyright (c) 2013 Ink (Cloudtop Inc). All rights reserved.
+//
+//  Portions of the code derived from AFSDKDemoViewController.m, part of the AviaryDemo-iOS project, created by Michael
+//  Vitrano on 1/23/13. Copyright (c) 2013 Aviary. All rights reserved.
 //
 
 #import "TPMainViewController.h"
@@ -17,20 +20,11 @@
 
 #import <INK/Ink.h>
 
-#define kAFSDKDemoImageViewInset 10.0f
-#define kAFSDKDemoBorderAspectRatioPortrait 3.0f/4.0f
-#define kAFSDKDemoBorderAspectRatioLandscape 4.0f/3.0f
-
 @interface TPMainViewController () <UINavigationControllerDelegate, AFPhotoEditorControllerDelegate, iCarouselDataSource, iCarouselDelegate>
 
-@property (strong, nonatomic) UIImageView * imagePreviewView;
-@property (nonatomic, strong) UIView * borderView;
-@property (nonatomic, assign) BOOL shouldReleasePopover;
-
 @property (nonatomic, strong) ALAssetsLibrary * assetLibrary;
-@property (nonatomic, strong) NSMutableArray * sessions;
+@property (nonatomic, strong) NSMutableArray * editorSessions;
 
-@property (nonatomic, strong) UIImage *currentImage;
 @property (nonatomic, strong) NSMutableDictionary *photos;
 @property (nonatomic, strong) NSMutableArray *photoIndexOrder;
 @property (nonatomic, strong) UIView *raisedView;
@@ -39,7 +33,7 @@
 
 @implementation TPMainViewController
 
-@synthesize carousel, albums, albumName, albumSlider, currentImage, photos, photoIndexOrder, raisedView;
+@synthesize carousel, albums, albumName, albumSlider, photos, photoIndexOrder, raisedView;
 
 #pragma mark - View Controller Methods
 
@@ -65,7 +59,7 @@
     
     // Allocate Sessions Array
     NSMutableArray * sessions = [NSMutableArray new];
-    [self setSessions:sessions];
+    [self setEditorSessions:sessions];
     
     // Start the Aviary Editor OpenGL Load
     [AFOpenGLManager beginOpenGLLoad];
@@ -227,8 +221,6 @@
 #pragma mark - Photo Editor Creation and Presentation
 - (void) launchPhotoEditorWithImage:(UIImage *)editingResImage highResolutionImage:(UIImage *)highResImage
 {
-    currentImage = highResImage != nil ? highResImage : editingResImage;
-    
     // Initialize the photo editor and set its delegate
     AFPhotoEditorController * photoEditor = [[AFPhotoEditorController alloc] initWithImage:editingResImage];
     [photoEditor setDelegate:self];
@@ -259,7 +251,7 @@
     __block AFPhotoEditorSession *session = [photoEditor session];
     
     // Add the session to our sessions array. We need to retain the session until all contexts we create from it are finished rendering.
-    [[self sessions] addObject:session];
+    [[self editorSessions] addObject:session];
     
     // Create a context from the session with the high res image.
     AFPhotoEditorContext *context = [session createContextWithImage:highResImage];
@@ -276,7 +268,7 @@
             UIImageWriteToSavedPhotosAlbum(result, nil, nil, NULL);
         }
         
-        [[blockSelf sessions] removeObject:session];
+        [[blockSelf editorSessions] removeObject:session];
         
         blockSelf = nil;
         session = nil;
@@ -310,7 +302,7 @@
 // This is called when the user taps "Cancel" in the photo editor.
 - (void) photoEditorCanceled:(AFPhotoEditorController *)editor
 {
-    BOOL *displayInk = [Ink appShouldReturn] && currentImage;
+    BOOL *displayInk = [Ink appShouldReturn];
     [self dismissViewControllerAnimated:!displayInk completion:^{
         if (displayInk) {
             //We want to show Ink when we cancel as well to allow the user to go back

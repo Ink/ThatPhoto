@@ -46,7 +46,6 @@
 		027AB29017B9DF3E007171B1 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 027AB26B17B9DF3E007171B1 /* splash@2x.png */; };
 		027AB29117B9DF3E007171B1 /* splash~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 027AB26C17B9DF3E007171B1 /* splash~ipad.png */; };
 		027AB29217B9DF3E007171B1 /* splash~ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 027AB26D17B9DF3E007171B1 /* splash~ipad@2x.png */; };
-		027AB29317B9DF3E007171B1 /* ThatPhoto-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 027AB26E17B9DF3E007171B1 /* ThatPhoto-Info.plist */; };
 		027AB2A717B9DF60007171B1 /* INKWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 027AB29617B9DF60007171B1 /* INKWelcomeViewController.m */; };
 		027AB2A817B9DF60007171B1 /* INKWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027AB29717B9DF60007171B1 /* INKWelcomeViewController.xib */; };
 		027AB2A917B9DF60007171B1 /* PagedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 027AB29917B9DF60007171B1 /* PagedScrollView.m */; };
@@ -585,7 +584,6 @@
 				027AB29017B9DF3E007171B1 /* splash@2x.png in Resources */,
 				027AB29117B9DF3E007171B1 /* splash~ipad.png in Resources */,
 				027AB29217B9DF3E007171B1 /* splash~ipad@2x.png in Resources */,
-				027AB29317B9DF3E007171B1 /* ThatPhoto-Info.plist in Resources */,
 				027AB2A817B9DF60007171B1 /* INKWelcomeViewController.xib in Resources */,
 				027AB2AA17B9DF60007171B1 /* OnboardStep2.png in Resources */,
 				027AB2AB17B9DF60007171B1 /* OnboardStep2@2x.png in Resources */,

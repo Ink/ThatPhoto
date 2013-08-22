@@ -22,15 +22,18 @@ License
 -------
 ThatPhoto is an open-source iOS application built by [Ink](www.inkmobility.com), released under the MIT License. You are welcome to fork this app, and pull requests are always encouraged.
 
-We do builds every other Thursday and submit the apps to the iOS App Store.
+How To Contribute
+-------------------------
+Glad you asked! ThatPhoto is based on the [Git flow](http://nvie.com/posts/a-successful-git-branching-model/) development model, so to contribute, please make sure that you follow the git flow branching methodology.
 
+Currently ThatPhoto supports iOS6 on iPads. Make sure that your code runs in both the simulator and on an actual device for this environment.
 
-Ink Integration Details
------------------------
-The Ink mobile framework adds the ability to take photos from within ThatPhoto and work with them in other applications. Plus, ThatPhoto can accept photos via Ink, so you can use ThatPhoto to edit images and/or save them to your camera roll. ThatPhoto integrates with Ink in two locations:
+Once you have your feature, improvement, or bugfix, submit a pull request, and we'll take a look and merge it in. We're very encouraging of adding new owners to the repo, so if after a few pull requests you want admin access, let us know.
 
-  1. ThatPhotoAppDelegate registers incoming actions.
-  2. ThatPhotomainViewController provides the handlers for the incoming actions, as well as registers the hooks on the images to open them in the Ink workspace.
+Every other Thursday, we cut a release branch off of develop, build the app, and submit it to the iOS App Store.
+
+If you're looking for something to work on, take a look in the list of issues for this repository. And in your pull request, be sure to add yourself to the readme and authors file as a contributor.
+
 
 What are the "That" Apps?
 -------------------------
@@ -57,6 +60,15 @@ As iOS developers, we leverage an incredible amount of software created by the c
   5. Show off your skills
   
   Trying to get a job? Point an employer to your merged pull requests to the sample apps as a demonstration of your ability to contribute to real apps.
+
+
+Ink Integration Details
+-----------------------
+The Ink mobile framework adds the ability to take photos from within ThatPhoto and work with them in other applications. Plus, ThatPhoto can accept photos via Ink, so you can use ThatPhoto to edit images and/or save them to your camera roll. ThatPhoto integrates with Ink in two locations:
+
+  1. [ThatPhotoAppDelegate](https://github.com/Ink/ThatPhoto/blob/develop/ThatPhoto/ThatPhotoAppDelegate.m#L39) registers incoming actions.
+  2. [TPMainViewController](https://github.com/Ink/ThatPhoto/blob/develop/ThatPhoto/TPMainViewController.m) provides the handlers for the incoming actions, as well as registers the hooks on the images to open them in the Ink workspace.
+  
   
 Contributors
 ------------

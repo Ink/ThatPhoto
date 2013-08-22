@@ -1,45 +1,39 @@
 //
-//  AFSDKDemoViewController.m
-//  AviaryDemo-iOS
+//  TPMainViewController.h
+//  ThatPhoto
 //
-//  Created by Michael Vitrano on 1/23/13.
-//  Copyright (c) 2013 Aviary. All rights reserved.
+//  Created by Brett van Zuiden
+//  Copyright (c) 2013 Ink (Cloudtop Inc). All rights reserved.
+//
+//  Portions of the code derived from AFSDKDemoViewController.m, part of the AviaryDemo-iOS project, created by Michael
+//  Vitrano on 1/23/13. Copyright (c) 2013 Aviary. All rights reserved.
 //
 
-#import "PWMainViewController.h"
+#import "TPMainViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <QuartzCore/QuartzCore.h>
 #import "AFPhotoEditorController.h"
 #import "AFPhotoEditorCustomization.h"
 #import "AFOpenGLManager.h"
 #import "ATConnect.h"
+#import "INKWelcomeViewController.h"
 
 #import <INK/Ink.h>
 
-#define kAFSDKDemoImageViewInset 10.0f
-#define kAFSDKDemoBorderAspectRatioPortrait 3.0f/4.0f
-#define kAFSDKDemoBorderAspectRatioLandscape 4.0f/3.0f
-
-@interface PWMainViewController () <UINavigationControllerDelegate, AFPhotoEditorControllerDelegate, UIPopoverControllerDelegate, iCarouselDataSource, iCarouselDelegate>
-
-@property (strong, nonatomic) UIImageView * imagePreviewView;
-@property (nonatomic, strong) UIView * borderView;
-@property (nonatomic, strong) UIPopoverController * popover;
-@property (nonatomic, assign) BOOL shouldReleasePopover;
+@interface TPMainViewController () <UINavigationControllerDelegate, AFPhotoEditorControllerDelegate, iCarouselDataSource, iCarouselDelegate>
 
 @property (nonatomic, strong) ALAssetsLibrary * assetLibrary;
-@property (nonatomic, strong) NSMutableArray * sessions;
+@property (nonatomic, strong) NSMutableArray * editorSessions;
+
+@property (nonatomic, strong) NSMutableDictionary *photos;
+@property (nonatomic, strong) NSMutableArray *photoIndexOrder;
+@property (nonatomic, strong) UIView *raisedView;
 
 @end
 
-@implementation PWMainViewController {
-    UIImage *currentImage;
-    NSMutableDictionary *photos;
-    NSMutableArray *photoIndexOrder;
-    UIView *raisedView;
-}
+@implementation TPMainViewController
 
-@synthesize carousel, albums, albumName, albumSlider;
+@synthesize carousel, albums, albumName, albumSlider, photos, photoIndexOrder, raisedView;
 
 #pragma mark - View Controller Methods
 
@@ -65,7 +59,7 @@
     
     // Allocate Sessions Array
     NSMutableArray * sessions = [NSMutableArray new];
-    [self setSessions:sessions];
+    [self setEditorSessions:sessions];
     
     // Start the Aviary Editor OpenGL Load
     [AFOpenGLManager beginOpenGLLoad];
@@ -77,9 +71,33 @@
     [self loadPhotoData];
 }
 
+- (void)setupView
+{
+    //Setup Carousel
+    carousel.type = iCarouselTypeWheel;
+    carousel.vertical = NO;
+    
+    // Set View Background Color
+    UIColor * backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    [[self view] setBackgroundColor:backgroundColor];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    //Once the app is all ready to go, run the welcome flow
+    if ([INKWelcomeViewController shouldRunWelcomeFlow]) {
+        INKWelcomeViewController *welcomeViewController = [[INKWelcomeViewController alloc] initWithNibName:@"INKWelcomeViewController" bundle:nil];
+        [self presentViewController:welcomeViewController animated:NO completion:^{}];
+    }
+}
+
 - (void)loadPhotoData {
+    //We load references to every photo into memory. This isn't as bad as it sounds, as we're not
+    //Loading the _actual_ photos into memory, just pointers to them, and the camera roll won't be
+    //holding more than 100,000 images
     NSMutableArray *albumCollector = [[NSMutableArray alloc] initWithCapacity:1];
-    //Holding a place for camera roll
+    //Holding a place for camera roll because we want it to be first
     [albumCollector setObject:[[NSObject alloc] init] atIndexedSubscript:0];
     ALAssetsLibrary *al = self.assetLibrary;
     
@@ -92,22 +110,26 @@
          NSString *sGroupPropertyName = (NSString *)[group valueForProperty:ALAssetsGroupPropertyName];
          NSUInteger nType = [[group valueForProperty:ALAssetsGroupPropertyType] intValue];
          
+         //Grab all the photos (but no video, etc.)
          [group setAssetsFilter:[ALAssetsFilter allPhotos]];
          
          int groupIndex = 0;
+         //If we're the camera roll, put the photos first
          if ([[sGroupPropertyName lowercaseString] isEqualToString:@"camera roll"] && nType == ALAssetsGroupSavedPhotos) {
              [albumCollector setObject:group atIndexedSubscript:0]; //already held
-         }
-         else {
+         } else { //Otherwise, add the album on to the stack
              [albumCollector addObject:group];
              groupIndex = [albumCollector count] - 1;
          }
-         NSLog(@"Album name: %@", [group valueForProperty:ALAssetsGroupPropertyName]);
          
+         //Then, fetch the photos in the album
          [group enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
              if (result == nil) {
                  return;
              }
+             //For each photo, we store a tuple of (album_id, photo_id) so that we can look up the photo later
+             //Because Objective-C doesn't have tuples, we use an index path, which is reasonably appropriate
+             //and probably more correct than just doing an array
              NSUInteger indexArr[] = {groupIndex, index};
              
              NSIndexPath *indexPath = [NSIndexPath indexPathWithIndexes:indexArr length:2];
@@ -120,6 +142,7 @@
          }];
          
          [self setAlbums:albumCollector];
+         //Reload the carousel with the new data
          [self reloadCarousel];
      } failureBlock:^(NSError *error) {
          NSLog(@"There was an error with the ALAssetLibrary: %@", error);
@@ -128,7 +151,7 @@
 }
 
 - (void) reloadCarousel {
-    //refresh count
+    //refresh
     [carousel reloadData];
 }
 
@@ -136,15 +159,22 @@
 
 - (void) launchEditorWithBlob:(INKBlob *)blob action:(INKAction*)action error:(NSError*)error
 {
+    //When we're launched via Ink, the left and right nav buttons bring up Ink to take the user
+    //back to where they came from, so the language on the buttons should reflect that.
     [AFPhotoEditorCustomization setLeftNavigationBarButtonTitle:kAFLeftNavigationTitlePresetExit];
     [AFPhotoEditorCustomization setRightNavigationBarButtonTitle:kAFRightNavigationTitlePresetDone];
 
+    //Constructing the image with the data out of the blob. Pretty darn easy.
     UIImage *photo = [UIImage imageWithData:blob.data];
+    
+    //Launch the photo editor
     [self launchPhotoEditorWithImage:photo highResolutionImage:nil];
 }
 
 - (void) launchEditorWithAsset:(ALAsset *)asset
 {
+    //When the editor is launched via the edit button, the left button closes the editor but remains in the app,
+    //and the right button saves the edited image to the camera roll
     [AFPhotoEditorCustomization setLeftNavigationBarButtonTitle:kAFLeftNavigationTitlePresetCancel];
     [AFPhotoEditorCustomization setRightNavigationBarButtonTitle:kAFRightNavigationTitlePresetSave];
     UIImage * editingResImage = [self editingResImageForAsset:asset];
@@ -155,13 +185,18 @@
 
 - (void) saveBlob:(INKBlob *)blob action:(INKAction*)action error:(NSError*)error
 {
+    //Saving the data to the camera roll
     UIImage *image = [UIImage imageWithData:blob.data];
     [self saveNewUIImage:image];
 }
 
+//Takes a UIImage and saves it to the camera roll as the most recent object
 - (void) saveNewUIImage:(UIImage*) image{
+    //The new image always goes as the most recent item (therefore first) item on the camera
+    //roll, so we scroll to show the first item.
     [self.carousel scrollToItemAtIndex:0 animated:NO];
-    ALAssetsGroup *album = [albums objectAtIndex:0]; //photo roll
+    
+    ALAssetsGroup *album = [albums objectAtIndex:0]; //Album for the photo roll
     
     [self.assetLibrary writeImageToSavedPhotosAlbum:[image CGImage] metadata:[NSDictionary dictionary] completionBlock:^(NSURL *assetURL, NSError *error) {
         if (error.code == 0) {
@@ -169,10 +204,12 @@
             
             // try to get the asset
             [self.assetLibrary assetForURL:assetURL resultBlock:^(ALAsset *asset) {
+                //We're the last item on the first album
                 NSUInteger indexArr[] = {0, [album numberOfAssets]};
                 NSIndexPath *newIndex = [NSIndexPath indexPathWithIndexes:indexArr length:2];
                 [photoIndexOrder insertObject:newIndex atIndex:0];
                 [photos setObject:asset forKey:newIndex];
+                //Show the photo being added
                 [self.carousel insertItemAtIndex:0 animated:YES];
                 [album addAsset:asset];
             } failureBlock:^(NSError *error) {
@@ -184,8 +221,6 @@
 #pragma mark - Photo Editor Creation and Presentation
 - (void) launchPhotoEditorWithImage:(UIImage *)editingResImage highResolutionImage:(UIImage *)highResImage
 {
-    currentImage = highResImage != nil ? highResImage : editingResImage;
-    
     // Initialize the photo editor and set its delegate
     AFPhotoEditorController * photoEditor = [[AFPhotoEditorController alloc] initWithImage:editingResImage];
     [photoEditor setDelegate:self];
@@ -216,12 +251,12 @@
     __block AFPhotoEditorSession *session = [photoEditor session];
     
     // Add the session to our sessions array. We need to retain the session until all contexts we create from it are finished rendering.
-    [[self sessions] addObject:session];
+    [[self editorSessions] addObject:session];
     
     // Create a context from the session with the high res image.
     AFPhotoEditorContext *context = [session createContextWithImage:highResImage];
     
-    __block PWMainViewController * blockSelf = self;
+    __block TPMainViewController * blockSelf = self;
     
     // Call render on the context. The render will asynchronously apply all changes made in the session (and therefore editor)
     // to the context's image. It will not complete until some point after the session closes (i.e. the editor hits done or
@@ -233,7 +268,7 @@
             UIImageWriteToSavedPhotosAlbum(result, nil, nil, NULL);
         }
         
-        [[blockSelf sessions] removeObject:session];
+        [[blockSelf editorSessions] removeObject:session];
         
         blockSelf = nil;
         session = nil;
@@ -247,15 +282,17 @@
 - (void) photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
 {
     BOOL *displayInk = [Ink appShouldReturn] && image;
-    //If showing ink, don't animate
+    //If showing ink, don't animate because Ink will animate up.
     [self dismissViewControllerAnimated:!displayInk completion:^{
         if (displayInk) {
-            //Wait for the view controller to go away
+            //Wait for the view controller to go away so we don't add on top of that while it's closing
             NSData *imageData = UIImagePNGRepresentation(image);
             INKBlob *blob = [INKBlob blobFromData:imageData];
+            //We make up a filename. We could lead this off, but we're being a better citizen by adding it.
             blob.filename = @"EditedPhoto.png";
             blob.uti = @"public.png";
-            [Ink showWorkspaceWithBlob:blob];
+            //We're done! Return the data
+            [Ink returnBlob:blob];
         } else {
             [self saveNewUIImage:image];
         }
@@ -265,14 +302,11 @@
 // This is called when the user taps "Cancel" in the photo editor.
 - (void) photoEditorCanceled:(AFPhotoEditorController *)editor
 {
-    BOOL *displayInk = [Ink appShouldReturn] && currentImage;
+    BOOL *displayInk = [Ink appShouldReturn];
     [self dismissViewControllerAnimated:!displayInk completion:^{
         if (displayInk) {
-            NSData *imageData = UIImagePNGRepresentation(currentImage);
-            INKBlob *blob = [INKBlob blobFromData:imageData];
-            blob.filename = @"EditedPhoto.png";
-            blob.uti = @"public.png";
-            [Ink showWorkspaceWithBlob:blob];
+            //We want to show Ink when we cancel as well to allow the user to go back
+            [Ink return];
         }
     }];
 }
@@ -324,8 +358,7 @@
 
 - (IBAction)scrollAlbums:(id)sender {
     int index = albumSlider.value * [photoIndexOrder count];
-    NSLog(@"Scroll to: %d", index);
-    NSLog(@"Value: %f", albumSlider.value);
+    //We don't animate because things get jerky
     [carousel scrollToItemAtIndex:index animated:NO];
 }
 
@@ -346,37 +379,11 @@
 
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    [self setShouldReleasePopover:NO];
-    [[self popover] dismissPopoverAnimated:YES];
-}
-
-#pragma mark - Private Helper Methods
-
-- (BOOL) hasValidAPIKey
-{
-    NSString * key = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Aviary-API-Key"];
-    if ([key isEqualToString:@"<YOUR_API_KEY>"]) {
-        [[[UIAlertView alloc] initWithTitle:@"Oops!" message:@"You forgot to add your API key!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        return NO;
-    }
-    return YES;
-}
-
-- (void)setupView
-{
-    //Setup Carousel
-    carousel.type = iCarouselTypeWheel;
-    carousel.vertical = NO;
-    
-    // Set View Background Color
-    UIColor * backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
-    [[self view] setBackgroundColor:backgroundColor];
 }
 
 #pragma mark iCarousel data source methods
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)_carousel
 {
-    NSLog(@"Count: %d", [photoIndexOrder count]);
     return [photoIndexOrder count];
 }
 
@@ -391,10 +398,8 @@
         && [[UIScreen mainScreen] scale] == 2.0) {
         // Retina
         image = [UIImage imageWithCGImage:[asset thumbnail]];
-
     } else {
         // Not Retina
-
         image = [UIImage imageWithCGImage:[asset aspectRatioThumbnail]];
     }
     
@@ -417,14 +422,17 @@
         
         [view addSubview:imageView];
         
+        //Setting up the recognizer to allow the user to drag the photo onto either the edit or the Ink action
         UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragPhoto:)];
         [view addGestureRecognizer:panGesture];
+        
+        //Enabling Ink on the view so you can double-tap to open the photo. Sometimes hard because of the small target size
         [view INKEnableWithUTI:@"public.png" dynamicBlob:^INKBlob *{
             int currIndex = [self.carousel indexOfItemView:view];
             NSIndexPath *indexPath = [photoIndexOrder objectAtIndex:currIndex];
             ALAsset *photo = [photos objectForKey:indexPath];
             return [self blobForAsset:photo];
-        }];
+        }]; //We don't need a return block because we handle it centrally with saveBlob (see app delegate)
     }
     else
     {
@@ -445,6 +453,7 @@
 }
 
 - (void) dragPhoto:(UIPanGestureRecognizer *)gesture {
+    //The user can drag the photo around and drop it on either the Ink button or the Edit button
     if (gesture.state == UIGestureRecognizerStateBegan) {
         carousel.scrollEnabled = NO;
         UIView *currentItem = carousel.currentItemView;
@@ -454,6 +463,8 @@
     }
     if (gesture.state == UIGestureRecognizerStateChanged) {
         UIView *currentItem = carousel.currentItemView;
+        //Note that we're using translation rather than point so we can get the offset. Much easier than trying to
+        //store and increment positional changes ourselves
         CGPoint point = [gesture translationInView:[currentItem superview]];
         CGSize size = currentItem.frame.size;
         //Move the item
@@ -462,12 +473,12 @@
     if (gesture.state == UIGestureRecognizerStateEnded) {
         self.inkButton.highlighted = NO;
         self.editButton.highlighted = NO;
+        
         //Hit detection
         CGPoint endPoint = [gesture locationInView:self.view];
         if ([self.inkButton pointInside:[self.inkButton convertPoint:endPoint fromView:self.view] withEvent:nil]) {
             [self launchInkForCurrentPhoto:nil];
         } else if ([self.editButton pointInside:[self.editButton convertPoint:endPoint fromView:self.view] withEvent:nil]) {
-            NSLog(@"on the edit button");
             NSIndexPath *indexPath = [photoIndexOrder objectAtIndex:self.carousel.currentItemIndex];
             ALAsset *photo = [photos objectForKey:indexPath];
             [self launchEditorWithAsset:photo];
@@ -489,6 +500,8 @@
     }];
 }
 
+//Utility method to convert an asset into an Ink blob. This can take some time, so is best done in
+//a callback block or other background thread that doesn't block the UI
 - (INKBlob*) blobForAsset:(ALAsset*) asset {
     CGImageRef image = [[asset defaultRepresentation] fullScreenImage];
     
@@ -496,17 +509,18 @@
     NSData *imageData = UIImagePNGRepresentation(uiimage);
     INKBlob *blob = [INKBlob blobFromData:imageData];
     blob.uti = @"public.png";
+    //We don't _need_ a filename per-say, but we're being a better citizen by adding one.
     blob.filename = @"photo.png";
     return blob;
 }
 
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)_carousel {
+    //when the carousel slides, we update the slider and see if we've changed albums
     NSIndexPath* indexPath = [photoIndexOrder objectAtIndex:_carousel.currentItemIndex];
     int albumIndex = [indexPath indexAtPosition:0];
     ALAssetsGroup* album = [albums objectAtIndex:albumIndex];
 
     albumSlider.value = (_carousel.currentItemIndex+ 0.f) / [photoIndexOrder count];
-    
     albumName.text = [album valueForProperty:ALAssetsGroupPropertyName];
 }
 
@@ -517,6 +531,9 @@
 }
 
 - (void)carousel:(iCarousel *)_carousel didSelectItemAtIndex:(NSInteger)index {
+    //It's not immediately obvious that the Ink dot and the edit icon are buttons.
+    //To help signal this, when a user taps on a photo, we "wiggle" both the edit icon
+    //and the Ink dot.
     #define RADIANS(degrees) ((degrees * M_PI) / 180.0)
     
     CGAffineTransform leftWobble = CGAffineTransformRotate(CGAffineTransformIdentity, RADIANS(-5.0));
@@ -528,6 +545,7 @@
     self.editButton.highlighted = YES;
     self.inkButton.highlighted = YES;
     
+    //Wobble animation: Shake 3 times, then settle to normal
     [UIView beginAnimations:@"wobble" context:nil];
     [UIView setAnimationRepeatAutoreverses:YES]; // important
     [UIView setAnimationRepeatCount:3];
@@ -543,6 +561,7 @@
 
 - (void) wobbleEnded:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
 {
+    //Settling to normal
     if ([finished boolValue]) {
         [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear animations:^{
             self.editButton.transform = CGAffineTransformIdentity;
@@ -555,12 +574,15 @@
 }
 
 - (CATransform3D) carousel:(iCarousel *)_carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform {
+    //Having all the images in the carousel doesn't look as good, so we have the ones that are futher away from center scale down a bit.
     CGFloat scale = 1.25f - (abs(offset)/2.5f);
     transform = CATransform3DScale(transform, scale, scale, 1.f);
     return transform;
 }
 
 - (void)carouselDidEndScrollingAnimation:(iCarousel *)_carousel {
+    //Further signaling to the user what's going on: when the carousel stops spinning,
+    //we raise the current, middle item to make it clear that this is the item we're now "acting" on
     raisedView = _carousel.currentItemView;
     [UIView animateWithDuration:0.5f animations:^{
         CGRect currFrame = raisedView.frame;
@@ -570,6 +592,7 @@
 
 - (void)carouselWillBeginScrollingAnimation:(iCarousel *)_carousel {
     NSLog(@"Began Scrolling, %@", raisedView);
+    //Undoing the raise when we start scrolling
     if (raisedView && raisedView.frame.origin.y < 0.f) {
         [UIView animateWithDuration:0.2f animations:^{
             CGRect currFrame = raisedView.frame;

@@ -1,4 +1,4 @@
-ThatPhoto
+ThatPhoto [![App Store](http://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.png)](https://itunes.apple.com/app/id681031406)
 =========
 
 ThatPhoto is a new and fun way to flow through and work with the pictures you have on your iPad. Flick, drag, and slide through your camera roll and other albums. 
@@ -12,9 +12,9 @@ Features:
 * Touch-up a picture with red-eye reduction, whitening, and blemish removal using Aviary.
 * Work with your photos in other applications using Ink. The new photo will be saved to your camera roll when you're done.
 
-The full list of features is detailed in our [blog post](http://blog.inkmobility.com/post/58830177894/introducing-thatcloud-your-portal-to-your-cloud). **TODO: fix blog post link**
+The full list of features is detailed in our [blog post](http://blog.inkmobility.com/post/59114539972/thatphoto-the-ipad-app-for-editing-storing-and).
 
-ThatPhoto is also currently available on the [App Store](https://itunes.apple.com/us/app/thatphoto/id681031406)
+ThatPhoto is also currently available on the [App Store](https://itunes.apple.com/app/thatphoto/id681031406)
 
 ![ThatPhoto in action](http://a1.mzstatic.com/us/r30/Purple4/v4/bd/07/1a/bd071a85-5bda-e508-65fe-55d3c37c154f/screen480x480.jpeg)
 

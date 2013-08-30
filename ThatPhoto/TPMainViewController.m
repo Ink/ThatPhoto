@@ -155,6 +155,98 @@
     [carousel reloadData];
 }
 
+#pragma mark - Swyp Methods
+-(swypWorkspaceViewController *)swypWorkspace{
+	if (_swypWorkspace == nil){
+		_swypWorkspace	=	[[swypWorkspaceViewController alloc] init];
+		
+		//this data source will link to the contentdisplayview controller through the content manager
+		//We're set as a delegate so we can can save photos we receive in a very simple way,
+		//but see the protocols that swypPhotoArrayDatasource conforms to if you want to create custom data sources; EG, for core data
+		swypBackedPhotoDataSource *	photoDatasource	= [[swypBackedPhotoDataSource alloc] initWithBackingDelegate:self];
+		//make sure to set the data-source! If there are bugs, you should submit a pull-request!
+		[[[self swypWorkspace] contentManager] setContentDataSource:photoDatasource];
+		[[[self swypWorkspace] contentManager] addDataDelegate:photoDatasource];
+
+	}
+    
+	return _swypWorkspace;
+}
+
+
+
+- (IBAction)launchSwypForCurrentPhoto:(id)sender {
+    NSIndexPath *indexPath = [photoIndexOrder objectAtIndex:self.carousel.currentItemIndex];
+    ALAsset *photo = [photos objectForKey:indexPath];
+    
+    //fine it's a hack.. I don't why I'm this lazy.. to cast like this
+    swypBackedPhotoDataSource *	photoDatasource	= (swypBackedPhotoDataSource*) [[[self swypWorkspace] contentManager] contentDataSource];
+    [photoDatasource removeAllPhotos];
+    
+    CGImageRef imageRef = [[photo defaultRepresentation] fullScreenImage];
+    
+    UIImage * image = [UIImage imageWithCGImage:imageRef];
+    
+    //here is one way to avoid blocking the main thread when loading images
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [photoDatasource addUIImage:[self constrainImage:image toSize:CGSizeMake(1000, 1000)] atIndex:0];
+    }];
+    
+    [[self swypWorkspace] presentContentWorkspaceAtopViewController:self];
+
+}
+
+-(UIImage*)	constrainImage:(UIImage*)image toSize:(CGSize)maxSize{
+	if (image == nil)
+		return nil;
+	
+	//CGBitmap will help us out in the future
+	CGSize oversize = CGSizeMake([image size].width - maxSize.width, [image size].height - maxSize.height);
+	
+	CGSize iconSize			=	CGSizeZero;
+	
+	if (oversize.width > 0 || oversize.height > 0){
+		if (oversize.height > oversize.width){
+			double scaleQuantity	=	maxSize.height/ image.size.height;
+			iconSize		=	CGSizeMake(scaleQuantity * image.size.width, maxSize.height);
+		}else{
+			double scaleQuantity	=	maxSize.width/ image.size.width;
+			iconSize		=	CGSizeMake(maxSize.width, scaleQuantity * image.size.height);
+		}
+	}else{
+		return image;
+	}
+	
+	UIGraphicsBeginImageContextWithOptions(iconSize, NO, 1);
+	[image drawInRect:CGRectMake(0,0,iconSize.width,iconSize.height)];
+	UIImage* constrainedImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	
+	return constrainedImage;
+}
+
+#pragma mark - swypBackedPhotoDataSourceDelegate
+-(void) swypBackedPhotoDataSourceRecievedPhoto: (UIImage*) photo withDataSource: (swypBackedPhotoDataSource*)dataSource {
+	UIImageWriteToSavedPhotosAlbum(photo, nil, nil, nil);
+	
+	UIView * flashView	= [[UIView alloc] initWithFrame:[self swypWorkspace].view.frame];
+	[flashView setBackgroundColor:[UIColor whiteColor]];
+	[flashView setAlpha:0];
+	[self.swypWorkspace.view addSubview:flashView];
+
+	[UIView animateWithDuration:.3 animations:^{
+		[flashView setAlpha:1];
+	}completion:^(BOOL completed){
+		[UIView animateWithDuration:.3 animations:^{
+			[flashView setAlpha:0];
+		}completion:^(BOOL completed){
+			[flashView removeFromSuperview];
+		}];
+	}];
+}
+
+
+
 #pragma mark - Photo Editor Launch Methods
 
 - (void) launchEditorWithBlob:(INKBlob *)blob action:(INKAction*)action error:(NSError*)error

@@ -1,0 +1,3 @@
+[submodule "swyp"]
+	path = swyp
+	url = git@github.com:swyp/swyp.git

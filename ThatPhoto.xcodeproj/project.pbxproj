@@ -81,6 +81,24 @@
 		06CD773B16B093260040A783 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CD773A16B093250040A783 /* CoreText.framework */; };
 		06CD773D16B0932D0040A783 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CD773C16B0932D0040A783 /* OpenGLES.framework */; };
 		06CD78D316B30A150040A783 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CD78D216B30A150040A783 /* SystemConfiguration.framework */; };
+		79FD9B6317D011F1006B1D37 /* liblibSwyp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79FD9B6017D011D8006B1D37 /* liblibSwyp.a */; };
+		79FD9B6517D01232006B1D37 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79FD9B6417D01232006B1D37 /* GameKit.framework */; };
+		79FD9B7717D0131E006B1D37 /* bluetooth-logo-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B6717D0131E006B1D37 /* bluetooth-logo-enabled.png */; };
+		79FD9B7817D0131E006B1D37 /* bluetooth-logo-enabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B6817D0131E006B1D37 /* bluetooth-logo-enabled@2x.png */; };
+		79FD9B7917D0131E006B1D37 /* connectivity-bluetooth-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B6917D0131E006B1D37 /* connectivity-bluetooth-disabled.png */; };
+		79FD9B7A17D0131E006B1D37 /* connectivity-bluetooth-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B6A17D0131E006B1D37 /* connectivity-bluetooth-disabled@2x.png */; };
+		79FD9B7B17D0131E006B1D37 /* connectivity-bluetooth-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B6B17D0131E006B1D37 /* connectivity-bluetooth-enabled.png */; };
+		79FD9B7C17D0131E006B1D37 /* connectivity-bluetooth-enabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B6C17D0131E006B1D37 /* connectivity-bluetooth-enabled@2x.png */; };
+		79FD9B7D17D0131E006B1D37 /* connectivity-world-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B6D17D0131E006B1D37 /* connectivity-world-disabled.png */; };
+		79FD9B7E17D0131E006B1D37 /* connectivity-world-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B6E17D0131E006B1D37 /* connectivity-world-disabled@2x.png */; };
+		79FD9B7F17D0131E006B1D37 /* connectivity-world-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B6F17D0131E006B1D37 /* connectivity-world-enabled.png */; };
+		79FD9B8017D0131E006B1D37 /* connectivity-world-enabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B7017D0131E006B1D37 /* connectivity-world-enabled@2x.png */; };
+		79FD9B8117D0131E006B1D37 /* grippers@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B7117D0131E006B1D37 /* grippers@2x.png */; };
+		79FD9B8217D0131E006B1D37 /* swypPromptHud.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B7217D0131E006B1D37 /* swypPromptHud.png */; };
+		79FD9B8317D0131E006B1D37 /* swypPromptHud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B7317D0131E006B1D37 /* swypPromptHud@2x.png */; };
+		79FD9B8417D0131E006B1D37 /* swypWorkspaceBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B7417D0131E006B1D37 /* swypWorkspaceBackground.png */; };
+		79FD9B8517D0131E006B1D37 /* top_curl.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B7517D0131E006B1D37 /* top_curl.png */; };
+		79FD9B8617D0131E006B1D37 /* top_curl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FD9B7617D0131E006B1D37 /* top_curl@2x.png */; };
 		EAE28E7817B4D4FF00B7F505 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE28E7717B4D4FF00B7F505 /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +123,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 49D1118C13341A7C00603373;
 			remoteInfo = ApptentiveResources;
+		};
+		79FD9B5F17D011D8006B1D37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79FD9B5817D011D8006B1D37 /* libSwyp.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = libSwyp;
+		};
+		79FD9B6117D011E7006B1D37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79FD9B5817D011D8006B1D37 /* libSwyp.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = libSwyp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -197,6 +229,24 @@
 		06CD773A16B093250040A783 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		06CD773C16B0932D0040A783 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		06CD78D216B30A150040A783 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		79FD9B5817D011D8006B1D37 /* libSwyp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libSwyp.xcodeproj; path = swyp/libSwyp/libSwyp.xcodeproj; sourceTree = "<group>"; };
+		79FD9B6417D01232006B1D37 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		79FD9B6717D0131E006B1D37 /* bluetooth-logo-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bluetooth-logo-enabled.png"; sourceTree = "<group>"; };
+		79FD9B6817D0131E006B1D37 /* bluetooth-logo-enabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bluetooth-logo-enabled@2x.png"; sourceTree = "<group>"; };
+		79FD9B6917D0131E006B1D37 /* connectivity-bluetooth-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-bluetooth-disabled.png"; sourceTree = "<group>"; };
+		79FD9B6A17D0131E006B1D37 /* connectivity-bluetooth-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-bluetooth-disabled@2x.png"; sourceTree = "<group>"; };
+		79FD9B6B17D0131E006B1D37 /* connectivity-bluetooth-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-bluetooth-enabled.png"; sourceTree = "<group>"; };
+		79FD9B6C17D0131E006B1D37 /* connectivity-bluetooth-enabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-bluetooth-enabled@2x.png"; sourceTree = "<group>"; };
+		79FD9B6D17D0131E006B1D37 /* connectivity-world-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-world-disabled.png"; sourceTree = "<group>"; };
+		79FD9B6E17D0131E006B1D37 /* connectivity-world-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-world-disabled@2x.png"; sourceTree = "<group>"; };
+		79FD9B6F17D0131E006B1D37 /* connectivity-world-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-world-enabled.png"; sourceTree = "<group>"; };
+		79FD9B7017D0131E006B1D37 /* connectivity-world-enabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-world-enabled@2x.png"; sourceTree = "<group>"; };
+		79FD9B7117D0131E006B1D37 /* grippers@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grippers@2x.png"; sourceTree = "<group>"; };
+		79FD9B7217D0131E006B1D37 /* swypPromptHud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swypPromptHud.png; sourceTree = "<group>"; };
+		79FD9B7317D0131E006B1D37 /* swypPromptHud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swypPromptHud@2x.png"; sourceTree = "<group>"; };
+		79FD9B7417D0131E006B1D37 /* swypWorkspaceBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swypWorkspaceBackground.png; sourceTree = "<group>"; };
+		79FD9B7517D0131E006B1D37 /* top_curl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_curl.png; sourceTree = "<group>"; };
+		79FD9B7617D0131E006B1D37 /* top_curl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_curl@2x.png"; sourceTree = "<group>"; };
 		EAE28E7717B4D4FF00B7F505 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -205,6 +255,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79FD9B6317D011F1006B1D37 /* liblibSwyp.a in Frameworks */,
+				79FD9B6517D01232006B1D37 /* GameKit.framework in Frameworks */,
 				027AB2B617B9DFA6007171B1 /* libApptentiveConnect.a in Frameworks */,
 				06CD773716B093190040A783 /* QuartzCore.framework in Frameworks */,
 				EAE28E7817B4D4FF00B7F505 /* CoreTelephony.framework in Frameworks */,
@@ -264,6 +316,7 @@
 		027AB24C17B9DF3E007171B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				79FD9B6617D0131E006B1D37 /* swypBundleResources */,
 				02E96E3517C56C5400969697 /* AppLaunchScreens */,
 				027AB24D17B9DF3E007171B1 /* Background Images */,
 				027AB25117B9DF3E007171B1 /* Button Backgrounds */,
@@ -413,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				027AB23C17B9DEEA007171B1 /* ATConnect.h */,
+				79FD9B5817D011D8006B1D37 /* libSwyp.xcodeproj */,
 				027AB23017B9DEE0007171B1 /* ApptentiveConnect.xcodeproj */,
 				027AB29417B9DF60007171B1 /* WelcomeFlow */,
 				027AB24217B9DF3E007171B1 /* ThatPhoto */,
@@ -434,6 +488,7 @@
 		06CD767816B047030040A783 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79FD9B6417D01232006B1D37 /* GameKit.framework */,
 				027DE59217B9DFD100BCA4FE /* ApptentiveResources.bundle */,
 				EAE28E7717B4D4FF00B7F505 /* CoreTelephony.framework */,
 				027AB23E17B9DF12007171B1 /* INK.bundle */,
@@ -461,6 +516,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		79FD9B5917D011D8006B1D37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79FD9B6017D011D8006B1D37 /* liblibSwyp.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79FD9B6617D0131E006B1D37 /* swypBundleResources */ = {
+			isa = PBXGroup;
+			children = (
+				79FD9B6717D0131E006B1D37 /* bluetooth-logo-enabled.png */,
+				79FD9B6817D0131E006B1D37 /* bluetooth-logo-enabled@2x.png */,
+				79FD9B6917D0131E006B1D37 /* connectivity-bluetooth-disabled.png */,
+				79FD9B6A17D0131E006B1D37 /* connectivity-bluetooth-disabled@2x.png */,
+				79FD9B6B17D0131E006B1D37 /* connectivity-bluetooth-enabled.png */,
+				79FD9B6C17D0131E006B1D37 /* connectivity-bluetooth-enabled@2x.png */,
+				79FD9B6D17D0131E006B1D37 /* connectivity-world-disabled.png */,
+				79FD9B6E17D0131E006B1D37 /* connectivity-world-disabled@2x.png */,
+				79FD9B6F17D0131E006B1D37 /* connectivity-world-enabled.png */,
+				79FD9B7017D0131E006B1D37 /* connectivity-world-enabled@2x.png */,
+				79FD9B7117D0131E006B1D37 /* grippers@2x.png */,
+				79FD9B7217D0131E006B1D37 /* swypPromptHud.png */,
+				79FD9B7317D0131E006B1D37 /* swypPromptHud@2x.png */,
+				79FD9B7417D0131E006B1D37 /* swypWorkspaceBackground.png */,
+				79FD9B7517D0131E006B1D37 /* top_curl.png */,
+				79FD9B7617D0131E006B1D37 /* top_curl@2x.png */,
+			);
+			name = swypBundleResources;
+			path = swyp/swypBundleResources;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -476,6 +563,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				79FD9B6217D011E7006B1D37 /* PBXTargetDependency */,
 			);
 			name = ThatPhoto;
 			productName = "AviaryDemo-iOS";
@@ -507,6 +595,10 @@
 					ProductGroup = 027AB23117B9DEE0007171B1 /* Products */;
 					ProjectRef = 027AB23017B9DEE0007171B1 /* ApptentiveConnect.xcodeproj */;
 				},
+				{
+					ProductGroup = 79FD9B5917D011D8006B1D37 /* Products */;
+					ProjectRef = 79FD9B5817D011D8006B1D37 /* libSwyp.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -535,6 +627,13 @@
 			fileType = wrapper.cfbundle;
 			path = ApptentiveResources.bundle;
 			remoteRef = 027AB23A17B9DEE1007171B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		79FD9B6017D011D8006B1D37 /* liblibSwyp.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibSwyp.a;
+			remoteRef = 79FD9B5F17D011D8006B1D37 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -590,6 +689,22 @@
 				02E96E3B17C56C5400969697 /* Default-Landscape~ipad.png in Resources */,
 				02E96E3C17C56C5400969697 /* Default.png in Resources */,
 				02E96E3D17C56C5400969697 /* Default@2x.png in Resources */,
+				79FD9B7717D0131E006B1D37 /* bluetooth-logo-enabled.png in Resources */,
+				79FD9B7817D0131E006B1D37 /* bluetooth-logo-enabled@2x.png in Resources */,
+				79FD9B7917D0131E006B1D37 /* connectivity-bluetooth-disabled.png in Resources */,
+				79FD9B7A17D0131E006B1D37 /* connectivity-bluetooth-disabled@2x.png in Resources */,
+				79FD9B7B17D0131E006B1D37 /* connectivity-bluetooth-enabled.png in Resources */,
+				79FD9B7C17D0131E006B1D37 /* connectivity-bluetooth-enabled@2x.png in Resources */,
+				79FD9B7D17D0131E006B1D37 /* connectivity-world-disabled.png in Resources */,
+				79FD9B7E17D0131E006B1D37 /* connectivity-world-disabled@2x.png in Resources */,
+				79FD9B7F17D0131E006B1D37 /* connectivity-world-enabled.png in Resources */,
+				79FD9B8017D0131E006B1D37 /* connectivity-world-enabled@2x.png in Resources */,
+				79FD9B8117D0131E006B1D37 /* grippers@2x.png in Resources */,
+				79FD9B8217D0131E006B1D37 /* swypPromptHud.png in Resources */,
+				79FD9B8317D0131E006B1D37 /* swypPromptHud@2x.png in Resources */,
+				79FD9B8417D0131E006B1D37 /* swypWorkspaceBackground.png in Resources */,
+				79FD9B8517D0131E006B1D37 /* top_curl.png in Resources */,
+				79FD9B8617D0131E006B1D37 /* top_curl@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +742,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79FD9B6217D011E7006B1D37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libSwyp;
+			targetProxy = 79FD9B6117D011E7006B1D37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		027AB24317B9DF3E007171B1 /* InfoPlist.strings */ = {
@@ -701,6 +824,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThatPhoto/ThatPhoto-Prefix.pch";
+				HEADER_SEARCH_PATHS = "./swyp/**";
 				INFOPLIST_FILE = "$(SRCROOT)/ThatPhoto/ThatPhoto-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -728,6 +852,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThatPhoto/ThatPhoto-Prefix.pch";
+				HEADER_SEARCH_PATHS = "./swyp/**";
 				INFOPLIST_FILE = "$(SRCROOT)/ThatPhoto/ThatPhoto-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (

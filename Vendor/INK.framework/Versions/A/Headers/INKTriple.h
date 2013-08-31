@@ -21,6 +21,8 @@
 @property(nonatomic, strong) INKBlob *blob;
 @property(nonatomic, strong) INKAction *action;
 @property(nonatomic, strong) INKUser *user;
+@property BOOL useInstallFlowProtocol;
+
 
 // Instantiates a new triple for the given [Action, Blob, User] set.
 + (id)tripleWithAction:(INKAction *)action blob:(INKBlob *)blob user:(INKUser *)user;

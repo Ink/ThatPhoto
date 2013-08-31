@@ -46,7 +46,6 @@
 
 // Returns whether app was launched via ink and this should return in the corresponding way
 - (BOOL)appShouldReturn;
-
 - (BOOL)canPerformAction:(INKAction*)action;
 
 //Low-level inter-app communication stuff

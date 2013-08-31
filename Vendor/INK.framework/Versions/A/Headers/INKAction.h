@@ -28,8 +28,10 @@
 //Parent app
 @property(nonatomic, strong) INKApp *app;
 
-+ (id)action:(NSString *)name type:(NSString *)type;
-+ (id)action:(NSString *)name type:(NSString *)type app:(INKApp *)app;
++ (id) actionWithUUID:(NSString *)uuid;
+
++ (id)action:(NSString *)name type:(NSString *)type __attribute__((deprecated("Use actionWithUUID instead. You can get the UUIDs for your actions from the developer portal. For older actions, don't be suprised that the UUID is the user displayed action name.")));
++ (id)action:(NSString *)name type:(NSString *)type app:(INKApp *)app __attribute__((deprecated("Use actionWithUUID instead. You can get the UUIDs for your actions from the developer portal. For older actions, don't be suprised that the UUID is the user displayed action name.")));
 
 - (BOOL) isReturnAction;
 - (BOOL) isErrorAction;

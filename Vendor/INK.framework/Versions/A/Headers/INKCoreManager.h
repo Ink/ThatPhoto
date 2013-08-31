@@ -18,7 +18,8 @@
 @property (strong, atomic) NSString *callbackURLScheme;
 @property (readonly,atomic) INKApp *callingApp;
 @property (readonly,atomic) NSString *currentRequestId;
-@property (readonly,atomic) INKBlob *currentBlob;
+@property (readonly, nonatomic) INKBlob *currentBlob;
+@property (readonly, atomic) NSInteger blobChecksum;
 
 // RCOH THIS IS REQUIRED FOR BACKWARDS COMPATIBILITY. REMOVO PRONTO.
 @property (copy,atomic) INKActionCallbackBlock ios6ReturnBlock;

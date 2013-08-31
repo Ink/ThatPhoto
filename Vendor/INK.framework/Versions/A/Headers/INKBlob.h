@@ -37,4 +37,6 @@
 // Creates a blob from a file:// url pointing to a file on the device.
 + (INKBlob*)blobFromLocalFile:(NSURL *)source;
 
+- (NSInteger) crcChecksum;
+
 @end

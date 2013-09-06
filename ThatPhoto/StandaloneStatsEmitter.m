@@ -56,7 +56,7 @@
 }
 
 - (void) sendDictionary: (NSDictionary *)stat {
-#ifdef DEBUG
+#ifndef DEBUG
     NSURL *url = [NSURL URLWithString:ink_STATSURL];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];

@@ -81,6 +81,7 @@
 		06CD773B16B093260040A783 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CD773A16B093250040A783 /* CoreText.framework */; };
 		06CD773D16B0932D0040A783 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CD773C16B0932D0040A783 /* OpenGLES.framework */; };
 		06CD78D316B30A150040A783 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CD78D216B30A150040A783 /* SystemConfiguration.framework */; };
+		EA24661317D9A8D8009A4619 /* StandaloneStatsEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = EA24661217D9A8D8009A4619 /* StandaloneStatsEmitter.m */; };
 		EAE28E7817B4D4FF00B7F505 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE28E7717B4D4FF00B7F505 /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
@@ -197,6 +198,8 @@
 		06CD773A16B093250040A783 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		06CD773C16B0932D0040A783 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		06CD78D216B30A150040A783 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EA2465D717D7E4DF009A4619 /* StandaloneStatsEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandaloneStatsEmitter.h; sourceTree = "<group>"; };
+		EA24661217D9A8D8009A4619 /* StandaloneStatsEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandaloneStatsEmitter.m; sourceTree = "<group>"; };
 		EAE28E7717B4D4FF00B7F505 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -247,6 +250,8 @@
 		027AB24217B9DF3E007171B1 /* ThatPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				EA24661217D9A8D8009A4619 /* StandaloneStatsEmitter.m */,
+				EA2465D717D7E4DF009A4619 /* StandaloneStatsEmitter.h */,
 				027AB24317B9DF3E007171B1 /* InfoPlist.strings */,
 				027AB24517B9DF3E007171B1 /* main.m */,
 				027AB24617B9DF3E007171B1 /* ThatPhotoAppDelegate.h */,
@@ -623,6 +628,7 @@
 				027AB27317B9DF3E007171B1 /* TPMainViewController.m in Sources */,
 				027AB2A717B9DF60007171B1 /* INKWelcomeViewController.m in Sources */,
 				027AB2A917B9DF60007171B1 /* PagedScrollView.m in Sources */,
+				EA24661317D9A8D8009A4619 /* StandaloneStatsEmitter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

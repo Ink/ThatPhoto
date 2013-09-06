@@ -17,6 +17,7 @@
 #import "AFOpenGLManager.h"
 #import "ATConnect.h"
 #import "INKWelcomeViewController.h"
+#import "StandaloneStatsEmitter.h"
 
 #import <INK/Ink.h>
 
@@ -90,6 +91,8 @@
         INKWelcomeViewController *welcomeViewController = [[INKWelcomeViewController alloc] initWithNibName:@"INKWelcomeViewController" bundle:nil];
         [self presentViewController:welcomeViewController animated:NO completion:^{}];
     }
+    [[StandaloneStatsEmitter sharedEmitter] setAppKey:@"AjTXjeBephotoqTdTUPz"];
+    [[StandaloneStatsEmitter sharedEmitter] sendStat:@"app_launched" withAdditionalStatistics:nil];
 }
 
 - (void)loadPhotoData {
@@ -179,7 +182,8 @@
     [AFPhotoEditorCustomization setRightNavigationBarButtonTitle:kAFRightNavigationTitlePresetSave];
     UIImage * editingResImage = [self editingResImageForAsset:asset];
     UIImage * highResImage = [self highResImageForAsset:asset];
-    
+    [[StandaloneStatsEmitter sharedEmitter] sendStat:@"editor_pressed" withAdditionalStatistics:nil];
+
     [self launchPhotoEditorWithImage:editingResImage highResolutionImage:highResImage];
 }
 
@@ -284,6 +288,7 @@
     BOOL *displayInk = [Ink appShouldReturn] && image;
     //If showing ink, don't animate because Ink will animate up.
     [self dismissViewControllerAnimated:!displayInk completion:^{
+        [[StandaloneStatsEmitter sharedEmitter] sendStat:@"done_pressed" withAdditionalStatistics:nil];
         if (displayInk) {
             //Wait for the view controller to go away so we don't add on top of that while it's closing
             NSData *imageData = UIImagePNGRepresentation(image);
@@ -302,6 +307,8 @@
 // This is called when the user taps "Cancel" in the photo editor.
 - (void) photoEditorCanceled:(AFPhotoEditorController *)editor
 {
+    [[StandaloneStatsEmitter sharedEmitter] sendStat:@"cancel_pressed" withAdditionalStatistics:nil];
+
     BOOL *displayInk = [Ink appShouldReturn];
     [self dismissViewControllerAnimated:!displayInk completion:^{
         if (displayInk) {
@@ -453,6 +460,8 @@
 }
 
 - (void) dragPhoto:(UIPanGestureRecognizer *)gesture {
+    [[StandaloneStatsEmitter sharedEmitter] sendStat:@"photo_dragged" withAdditionalStatistics:nil];
+
     //The user can drag the photo around and drop it on either the Ink button or the Edit button
     if (gesture.state == UIGestureRecognizerStateBegan) {
         carousel.scrollEnabled = NO;
@@ -495,6 +504,8 @@
 - (IBAction)launchInkForCurrentPhoto:(id)sender {
     NSIndexPath *indexPath = [photoIndexOrder objectAtIndex:self.carousel.currentItemIndex];
     ALAsset *photo = [photos objectForKey:indexPath];
+    [[StandaloneStatsEmitter sharedEmitter] sendStat:@"inkdot_pressed" withAdditionalStatistics:nil];
+
     [Ink showWorkspaceWithUTI:@"public.png" dynamicBlob:^INKBlob *{
         return [self blobForAsset:photo];
     }];

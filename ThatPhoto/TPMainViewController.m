@@ -502,6 +502,15 @@
 }
 
 - (IBAction)launchInkForCurrentPhoto:(id)sender {
+    if (self.carousel.currentItemIndex == -1){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Select a photo"
+                                                        message:@"You must have some items in the photo gallery in order to proceed. If you're on a device, you can use the Camera to take a photo. If you're on a simulator, you can use Safari and long press to save an image into the gallery."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
     NSIndexPath *indexPath = [photoIndexOrder objectAtIndex:self.carousel.currentItemIndex];
     ALAsset *photo = [photos objectForKey:indexPath];
     [[StandaloneStatsEmitter sharedEmitter] sendStat:@"inkdot_pressed" withAdditionalStatistics:nil];
@@ -536,6 +545,15 @@
 }
 
 - (IBAction)launchEditorForCurrentPhoto:(id)sender {
+    if (self.carousel.currentItemIndex == -1){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Select a photo"
+                                                        message:@"You must have some items in the photo gallery in order to proceed. If you're on a device, you can use the Camera to take a photo. If you're on a simulator, you can use Safari and long press to save an image into the gallery."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
     NSIndexPath *indexPath = [photoIndexOrder objectAtIndex:self.carousel.currentItemIndex];
     ALAsset *photo = [photos objectForKey:indexPath];
     [self launchEditorWithAsset:photo];

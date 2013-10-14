@@ -17,7 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *inkButton;
 @property (nonatomic, retain) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) IBOutlet UILabel *albumName;
-@property (strong, nonatomic) UISlider *albumSlider;
+@property (strong, nonatomic) IBOutlet UISlider *albumSlider;
 
 @property (atomic, strong) NSArray *albums;
 

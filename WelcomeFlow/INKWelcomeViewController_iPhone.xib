@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="INKWelcomeViewController">
+            <connections>
+                <outlet property="pageScrollView" destination="3eT-3y-CuJ" id="Fq0-aC-24p"/>
+                <outlet property="view" destination="1" id="iCD-jw-hu2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eT-3y-CuJ" customClass="PagedScrollView">
+                    <rect key="frame" x="0.0" y="38" width="320" height="458"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yt-x3-ptE">
+                    <rect key="frame" x="120" y="518" width="80" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Get Started">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="skipWelcomeFlow:" destination="-1" eventType="touchUpInside" id="OyH-Bb-KUq"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="9yt-x3-ptE" secondAttribute="bottom" constant="20" symbolic="YES" id="A8N-nE-nQP"/>
+                <constraint firstItem="3eT-3y-CuJ" firstAttribute="centerX" secondItem="9yt-x3-ptE" secondAttribute="centerX" id="Dn4-gW-DUZ"/>
+                <constraint firstItem="3eT-3y-CuJ" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="SGb-7F-mk5"/>
+                <constraint firstItem="9yt-x3-ptE" firstAttribute="top" secondItem="3eT-3y-CuJ" secondAttribute="bottom" constant="22" id="cyj-ix-XUa"/>
+                <constraint firstAttribute="trailing" secondItem="3eT-3y-CuJ" secondAttribute="trailing" id="lpF-ya-OYt"/>
+                <constraint firstItem="3eT-3y-CuJ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="38" id="vuP-Y0-Qkn"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

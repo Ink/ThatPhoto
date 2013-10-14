@@ -81,6 +81,22 @@
 		06CD773B16B093260040A783 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CD773A16B093250040A783 /* CoreText.framework */; };
 		06CD773D16B0932D0040A783 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CD773C16B0932D0040A783 /* OpenGLES.framework */; };
 		06CD78D316B30A150040A783 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CD78D216B30A150040A783 /* SystemConfiguration.framework */; };
+		9ACF2C351809C3D2009F9AE9 /* INKWelcomeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C341809C3D2009F9AE9 /* INKWelcomeViewController_iPhone.xib */; };
+		9ACF2C421809CD71009F9AE9 /* WelcomeThatPhoto_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C361809CD71009F9AE9 /* WelcomeThatPhoto_iPhone@2x.png */; };
+		9ACF2C431809CD71009F9AE9 /* WelcomeThatPhoto_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C371809CD71009F9AE9 /* WelcomeThatPhoto_iPhone.png */; };
+		9ACF2C441809CD71009F9AE9 /* WelcomeThatPDF_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C381809CD71009F9AE9 /* WelcomeThatPDF_iPhone@2x.png */; };
+		9ACF2C451809CD71009F9AE9 /* WelcomeThatPDF_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C391809CD71009F9AE9 /* WelcomeThatPDF_iPhone.png */; };
+		9ACF2C461809CD71009F9AE9 /* WelcomeThatInbox_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C3A1809CD71009F9AE9 /* WelcomeThatInbox_iPhone@2x.png */; };
+		9ACF2C471809CD71009F9AE9 /* WelcomeThatInbox_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C3B1809CD71009F9AE9 /* WelcomeThatInbox_iPhone.png */; };
+		9ACF2C481809CD71009F9AE9 /* WelcomeThatCloud_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C3C1809CD71009F9AE9 /* WelcomeThatCloud_iPhone@2x.png */; };
+		9ACF2C491809CD71009F9AE9 /* WelcomeThatCloud_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C3D1809CD71009F9AE9 /* WelcomeThatCloud_iPhone.png */; };
+		9ACF2C4A1809CD71009F9AE9 /* OnboardStep3_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C3E1809CD71009F9AE9 /* OnboardStep3_iPhone@2x.png */; };
+		9ACF2C4B1809CD71009F9AE9 /* OnboardStep3_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C3F1809CD71009F9AE9 /* OnboardStep3_iPhone.png */; };
+		9ACF2C4C1809CD71009F9AE9 /* OnboardStep2_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C401809CD71009F9AE9 /* OnboardStep2_iPhone@2x.png */; };
+		9ACF2C4D1809CD71009F9AE9 /* OnboardStep2_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C411809CD71009F9AE9 /* OnboardStep2_iPhone.png */; };
+		9ACF2C501809CF38009F9AE9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C4E1809CF38009F9AE9 /* Default-568h@2x.png */; };
+		9ACF2C511809CF38009F9AE9 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C4F1809CF38009F9AE9 /* Default-568h.png */; };
+		9ACF2C531809D0D4009F9AE9 /* TPMainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF2C521809D0D4009F9AE9 /* TPMainViewController_iPhone.xib */; };
 		EA24661317D9A8D8009A4619 /* StandaloneStatsEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = EA24661217D9A8D8009A4619 /* StandaloneStatsEmitter.m */; };
 		EAE28E7817B4D4FF00B7F505 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE28E7717B4D4FF00B7F505 /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
@@ -198,6 +214,22 @@
 		06CD773A16B093250040A783 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		06CD773C16B0932D0040A783 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		06CD78D216B30A150040A783 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9ACF2C341809C3D2009F9AE9 /* INKWelcomeViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INKWelcomeViewController_iPhone.xib; sourceTree = "<group>"; };
+		9ACF2C361809CD71009F9AE9 /* WelcomeThatPhoto_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WelcomeThatPhoto_iPhone@2x.png"; sourceTree = "<group>"; };
+		9ACF2C371809CD71009F9AE9 /* WelcomeThatPhoto_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WelcomeThatPhoto_iPhone.png; sourceTree = "<group>"; };
+		9ACF2C381809CD71009F9AE9 /* WelcomeThatPDF_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WelcomeThatPDF_iPhone@2x.png"; sourceTree = "<group>"; };
+		9ACF2C391809CD71009F9AE9 /* WelcomeThatPDF_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WelcomeThatPDF_iPhone.png; sourceTree = "<group>"; };
+		9ACF2C3A1809CD71009F9AE9 /* WelcomeThatInbox_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WelcomeThatInbox_iPhone@2x.png"; sourceTree = "<group>"; };
+		9ACF2C3B1809CD71009F9AE9 /* WelcomeThatInbox_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WelcomeThatInbox_iPhone.png; sourceTree = "<group>"; };
+		9ACF2C3C1809CD71009F9AE9 /* WelcomeThatCloud_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WelcomeThatCloud_iPhone@2x.png"; sourceTree = "<group>"; };
+		9ACF2C3D1809CD71009F9AE9 /* WelcomeThatCloud_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WelcomeThatCloud_iPhone.png; sourceTree = "<group>"; };
+		9ACF2C3E1809CD71009F9AE9 /* OnboardStep3_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OnboardStep3_iPhone@2x.png"; sourceTree = "<group>"; };
+		9ACF2C3F1809CD71009F9AE9 /* OnboardStep3_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnboardStep3_iPhone.png; sourceTree = "<group>"; };
+		9ACF2C401809CD71009F9AE9 /* OnboardStep2_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OnboardStep2_iPhone@2x.png"; sourceTree = "<group>"; };
+		9ACF2C411809CD71009F9AE9 /* OnboardStep2_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnboardStep2_iPhone.png; sourceTree = "<group>"; };
+		9ACF2C4E1809CF38009F9AE9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9ACF2C4F1809CF38009F9AE9 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
+		9ACF2C521809D0D4009F9AE9 /* TPMainViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPMainViewController_iPhone.xib; sourceTree = "<group>"; };
 		EA2465D717D7E4DF009A4619 /* StandaloneStatsEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandaloneStatsEmitter.h; sourceTree = "<group>"; };
 		EA24661217D9A8D8009A4619 /* StandaloneStatsEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandaloneStatsEmitter.m; sourceTree = "<group>"; };
 		EAE28E7717B4D4FF00B7F505 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -259,6 +291,7 @@
 				027AB24817B9DF3E007171B1 /* TPMainViewController.h */,
 				027AB24917B9DF3E007171B1 /* TPMainViewController.m */,
 				027AB24A17B9DF3E007171B1 /* TPMainViewController_iPad.xib */,
+				9ACF2C521809D0D4009F9AE9 /* TPMainViewController_iPhone.xib */,
 				027AB24C17B9DF3E007171B1 /* Resources */,
 				027AB26E17B9DF3E007171B1 /* ThatPhoto-Info.plist */,
 				027AB26F17B9DF3E007171B1 /* ThatPhoto-Prefix.pch */,
@@ -335,6 +368,7 @@
 				027AB29517B9DF60007171B1 /* INKWelcomeViewController.h */,
 				027AB29617B9DF60007171B1 /* INKWelcomeViewController.m */,
 				027AB29717B9DF60007171B1 /* INKWelcomeViewController.xib */,
+				9ACF2C341809C3D2009F9AE9 /* INKWelcomeViewController_iPhone.xib */,
 				027AB29817B9DF60007171B1 /* PagedScrollView.h */,
 				027AB29917B9DF60007171B1 /* PagedScrollView.m */,
 				027AB29A17B9DF60007171B1 /* Resources */,
@@ -345,6 +379,18 @@
 		027AB29A17B9DF60007171B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9ACF2C361809CD71009F9AE9 /* WelcomeThatPhoto_iPhone@2x.png */,
+				9ACF2C371809CD71009F9AE9 /* WelcomeThatPhoto_iPhone.png */,
+				9ACF2C381809CD71009F9AE9 /* WelcomeThatPDF_iPhone@2x.png */,
+				9ACF2C391809CD71009F9AE9 /* WelcomeThatPDF_iPhone.png */,
+				9ACF2C3A1809CD71009F9AE9 /* WelcomeThatInbox_iPhone@2x.png */,
+				9ACF2C3B1809CD71009F9AE9 /* WelcomeThatInbox_iPhone.png */,
+				9ACF2C3C1809CD71009F9AE9 /* WelcomeThatCloud_iPhone@2x.png */,
+				9ACF2C3D1809CD71009F9AE9 /* WelcomeThatCloud_iPhone.png */,
+				9ACF2C3E1809CD71009F9AE9 /* OnboardStep3_iPhone@2x.png */,
+				9ACF2C3F1809CD71009F9AE9 /* OnboardStep3_iPhone.png */,
+				9ACF2C401809CD71009F9AE9 /* OnboardStep2_iPhone@2x.png */,
+				9ACF2C411809CD71009F9AE9 /* OnboardStep2_iPhone.png */,
 				027AB29B17B9DF60007171B1 /* OnboardStep2.png */,
 				027AB29C17B9DF60007171B1 /* OnboardStep2@2x.png */,
 				027AB29D17B9DF60007171B1 /* OnboardStep3.png */,
@@ -364,6 +410,8 @@
 		02E96E3517C56C5400969697 /* AppLaunchScreens */ = {
 			isa = PBXGroup;
 			children = (
+				9ACF2C4E1809CF38009F9AE9 /* Default-568h@2x.png */,
+				9ACF2C4F1809CF38009F9AE9 /* Default-568h.png */,
 				02E96E3617C56C5400969697 /* Default-Landscape@2x~ipad.png */,
 				02E96E3717C56C5400969697 /* Default-Landscape~ipad.png */,
 				02E96E3817C56C5400969697 /* Default.png */,
@@ -553,19 +601,28 @@
 				027AB23D17B9DEEA007171B1 /* ATConnect.h in Resources */,
 				027AB24017B9DF12007171B1 /* INK.bundle in Resources */,
 				027AB27017B9DF3E007171B1 /* InfoPlist.strings in Resources */,
+				9ACF2C421809CD71009F9AE9 /* WelcomeThatPhoto_iPhone@2x.png in Resources */,
+				9ACF2C4A1809CD71009F9AE9 /* OnboardStep3_iPhone@2x.png in Resources */,
 				027AB27417B9DF3E007171B1 /* TPMainViewController_iPad.xib in Resources */,
 				027AB27617B9DF3E007171B1 /* background.png in Resources */,
+				9ACF2C4D1809CD71009F9AE9 /* OnboardStep2_iPhone.png in Resources */,
 				027AB27717B9DF3E007171B1 /* background@2X.png in Resources */,
 				027AB27917B9DF3E007171B1 /* blue_button.png in Resources */,
 				027AB27A17B9DF3E007171B1 /* blue_button@2x.png in Resources */,
 				027AB27B17B9DF3E007171B1 /* blue_button_pressed.png in Resources */,
 				027AB27C17B9DF3E007171B1 /* blue_button_pressed@2x.png in Resources */,
 				027AB27D17B9DF3E007171B1 /* dark_button.png in Resources */,
+				9ACF2C351809C3D2009F9AE9 /* INKWelcomeViewController_iPhone.xib in Resources */,
 				027AB27E17B9DF3E007171B1 /* dark_button@2x.png in Resources */,
+				9ACF2C4C1809CD71009F9AE9 /* OnboardStep2_iPhone@2x.png in Resources */,
 				027AB27F17B9DF3E007171B1 /* dark_button_pressed.png in Resources */,
+				9ACF2C431809CD71009F9AE9 /* WelcomeThatPhoto_iPhone.png in Resources */,
 				027AB28017B9DF3E007171B1 /* dark_button_pressed@2x.png in Resources */,
 				027AB28617B9DF3E007171B1 /* Dot.png in Resources */,
+				9ACF2C491809CD71009F9AE9 /* WelcomeThatCloud_iPhone.png in Resources */,
+				9ACF2C4B1809CD71009F9AE9 /* OnboardStep3_iPhone.png in Resources */,
 				027AB28717B9DF3E007171B1 /* EditIcon.png in Resources */,
+				9ACF2C451809CD71009F9AE9 /* WelcomeThatPDF_iPhone.png in Resources */,
 				027AB28817B9DF3E007171B1 /* icon.ai in Resources */,
 				027AB28917B9DF3E007171B1 /* icon1024.png in Resources */,
 				027AB28A17B9DF3E007171B1 /* icon114.png in Resources */,
@@ -573,8 +630,12 @@
 				027AB28C17B9DF3E007171B1 /* icon512.png in Resources */,
 				027AB28D17B9DF3E007171B1 /* icon57.png in Resources */,
 				027AB28E17B9DF3E007171B1 /* icon72.png in Resources */,
+				9ACF2C511809CF38009F9AE9 /* Default-568h.png in Resources */,
 				027AB28F17B9DF3E007171B1 /* splash.png in Resources */,
 				027AB29017B9DF3E007171B1 /* splash@2x.png in Resources */,
+				9ACF2C531809D0D4009F9AE9 /* TPMainViewController_iPhone.xib in Resources */,
+				9ACF2C461809CD71009F9AE9 /* WelcomeThatInbox_iPhone@2x.png in Resources */,
+				9ACF2C471809CD71009F9AE9 /* WelcomeThatInbox_iPhone.png in Resources */,
 				027AB29117B9DF3E007171B1 /* splash~ipad.png in Resources */,
 				027AB29217B9DF3E007171B1 /* splash~ipad@2x.png in Resources */,
 				027AB2A817B9DF60007171B1 /* INKWelcomeViewController.xib in Resources */,
@@ -586,9 +647,12 @@
 				027AB2AF17B9DF60007171B1 /* WelcomeThatCloud@2x.png in Resources */,
 				027AB2B017B9DF60007171B1 /* WelcomeThatInbox.png in Resources */,
 				027AB2B117B9DF60007171B1 /* WelcomeThatInbox@2x.png in Resources */,
+				9ACF2C481809CD71009F9AE9 /* WelcomeThatCloud_iPhone@2x.png in Resources */,
 				027AB2B217B9DF60007171B1 /* WelcomeThatPDF.png in Resources */,
 				027AB2B317B9DF60007171B1 /* WelcomeThatPDF@2x.png in Resources */,
+				9ACF2C441809CD71009F9AE9 /* WelcomeThatPDF_iPhone@2x.png in Resources */,
 				027AB2B417B9DF60007171B1 /* WelcomeThatPhoto.png in Resources */,
+				9ACF2C501809CF38009F9AE9 /* Default-568h@2x.png in Resources */,
 				027AB2B517B9DF60007171B1 /* WelcomeThatPhoto@2x.png in Resources */,
 				027DE59317B9DFD100BCA4FE /* ApptentiveResources.bundle in Resources */,
 				02E96E3A17C56C5400969697 /* Default-Landscape@2x~ipad.png in Resources */,
@@ -701,6 +765,8 @@
 		06CD769D16B047030040A783 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Vendor\"",
@@ -718,7 +784,8 @@
 					"-Objc",
 				);
 				PRODUCT_NAME = ThatPhoto;
-				TARGETED_DEVICE_FAMILY = 2;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -726,8 +793,8 @@
 		06CD769E16B047030040A783 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Vendor\"",
@@ -747,7 +814,7 @@
 				PRODUCT_NAME = ThatPhoto;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

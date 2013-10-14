@@ -88,7 +88,7 @@
     
     //Once the app is all ready to go, run the welcome flow
     if ([INKWelcomeViewController shouldRunWelcomeFlow]) {
-        INKWelcomeViewController *welcomeViewController = [[INKWelcomeViewController alloc] initWithNibName:@"INKWelcomeViewController" bundle:nil];
+        INKWelcomeViewController *welcomeViewController = [[INKWelcomeViewController alloc] initWithNibName:DEVICE_SPECIFIC_NIB2(INKWelcomeViewController) bundle:nil];
         [self presentViewController:welcomeViewController animated:NO completion:^{}];
     }
     [[StandaloneStatsEmitter sharedEmitter] setAppKey:@"AjTXjeBephotoqTdTUPz"];

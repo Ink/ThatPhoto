@@ -12,7 +12,8 @@
 
 @end
 
-CGFloat const scrollViewHeight = 578.f;
+//CGFloat const scrollViewHeight = 578.f;
+#define scrollViewHeight (DEVICE_IS_IPAD ? 578.f : 345.f)
 CGFloat const scrollViewMargin = 0.f;
 
 NSString *nsuserdefaultsHasRunFlowKeyName = @"com.inkmobility.hasRunWelcomeFlow";
@@ -40,6 +41,14 @@ NSString *nsuserdefaultsHasRunFlowKeyName = @"com.inkmobility.hasRunWelcomeFlow"
     return self;
 }
 
+- (BOOL)shouldAutorotate
+{
+    if (DEVICE_IS_IPAD) {
+        return YES;
+    }
+    return NO;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -52,16 +61,16 @@ NSString *nsuserdefaultsHasRunFlowKeyName = @"com.inkmobility.hasRunWelcomeFlow"
     NSString* appID = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
     
     NSMutableArray *views = [NSMutableArray arrayWithCapacity:4];
-    NSMutableArray *images = [NSMutableArray arrayWithObjects:@"OnboardStep2", @"OnboardStep3", nil];
+    NSMutableArray *images = [NSMutableArray arrayWithObjects:DEVICE_SPECIFIC_NIB2(OnboardStep2), DEVICE_SPECIFIC_NIB2(OnboardStep3), nil];
     
     if ([appID isEqualToString:@"com.inkmobility.ThatPhoto"]) {
-        [images insertObject:@"WelcomeThatPhoto" atIndex:0];
+        [images insertObject:DEVICE_SPECIFIC_NIB2(WelcomeThatPhoto) atIndex:0];
     } else if ([appID isEqualToString:@"com.inkmobility.thatinbox"]) {
-        [images insertObject:@"WelcomeThatInbox" atIndex:0];
+        [images insertObject:DEVICE_SPECIFIC_NIB2(WelcomeThatInbox) atIndex:0];
     } else if ([appID isEqualToString:@"com.inkmobility.ThatPDF"]) {
-        [images insertObject:@"WelcomeThatPDF" atIndex:0];
+        [images insertObject:DEVICE_SPECIFIC_NIB2(WelcomeThatPDF) atIndex:0];
     } else if ([appID isEqualToString:@"com.inkmobility.thatcloud"]) {
-        [images insertObject:@"WelcomeThatCloud" atIndex:0];
+        [images insertObject:DEVICE_SPECIFIC_NIB2(WelcomeThatCloud) atIndex:0];
     }
     for (NSString *imageName in images) {
         UIView *welcomeScreen = [[UIView alloc] init];

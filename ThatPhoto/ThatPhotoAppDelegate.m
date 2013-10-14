@@ -26,7 +26,7 @@
     connection.apiKey = kApptentiveAPIKey;
     
     TPMainViewController * viewController;
-    viewController = [[TPMainViewController alloc] initWithNibName:@"TPMainViewController_iPad" bundle:nil];
+    viewController = [[TPMainViewController alloc] initWithNibName:DEVICE_SPECIFIC_NIB( TPMainViewController) bundle:nil];
     
     //Setting up Ink with the ThatPhoto app key
     [Ink setupWithAppKey:@"AjTXjeBephotoqTdTUPz"];

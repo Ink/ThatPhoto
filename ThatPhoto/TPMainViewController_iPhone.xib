@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TPMainViewController">
+            <connections>
+                <outlet property="albumName" destination="k5d-pn-nuv" id="WR6-JP-wVT"/>
+                <outlet property="albumSlider" destination="7t8-Pd-Dy6" id="Kzk-Ec-bOX"/>
+                <outlet property="carousel" destination="NUi-Eq-MDd" id="et4-sz-x2i"/>
+                <outlet property="editButton" destination="fML-R3-yDC" id="cbf-8v-DEZ"/>
+                <outlet property="inkButton" destination="Rjy-1Y-GqL" id="g2D-lM-Wab"/>
+                <outlet property="view" destination="1" id="35y-vY-Av4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fML-R3-yDC">
+                    <rect key="frame" x="20" y="45" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="5N0-21-tR5"/>
+                        <constraint firstAttribute="height" constant="50" id="ss9-eV-oVn"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="EditIcon.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="launchEditorForCurrentPhoto:" destination="-1" eventType="touchUpInside" id="rEd-QC-uAB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rjy-1Y-GqL">
+                    <rect key="frame" x="254" y="45" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="4SV-SC-vPb"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="Dot.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="launchInkForCurrentPhoto:" destination="-1" eventType="touchUpInside" id="xYE-TX-14g"/>
+                    </connections>
+                </button>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7t8-Pd-Dy6" userLabel="Album Slider">
+                    <rect key="frame" x="79" y="456" width="161" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="thumbTintColor" red="0.0" green="0.49152521170000002" blue="0.99492704870000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="scrollAlbums:" destination="-1" eventType="valueChanged" id="0YA-rx-fy5"/>
+                    </connections>
+                </slider>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Camera Roll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5d-pn-nuv" userLabel="AlbumName">
+                    <rect key="frame" x="60" y="430" width="200" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="sNW-r8-SjU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUi-Eq-MDd" userLabel="iCarousel" customClass="iCarousel">
+                    <rect key="frame" x="0.0" y="140" width="320" height="300"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="2Aw-Zd-S29"/>
+                        <outlet property="delegate" destination="-1" id="fZa-zk-c4i"/>
+                    </connections>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enl-M6-IB0">
+                    <rect key="frame" x="240" y="480" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="gpL-kB-6u7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <state key="normal" title="Feedback">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="feedbackButtonPressed:" destination="-1" eventType="touchUpInside" id="KVj-vt-4Zf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="enl-M6-IB0" firstAttribute="leading" secondItem="7t8-Pd-Dy6" secondAttribute="trailing" constant="2" id="2L2-mn-gAL"/>
+                <constraint firstItem="fML-R3-yDC" firstAttribute="top" secondItem="1" secondAttribute="top" constant="45" id="BiF-kr-Cf2"/>
+                <constraint firstAttribute="trailing" secondItem="NUi-Eq-MDd" secondAttribute="trailing" id="DJG-wH-zhN"/>
+                <constraint firstItem="k5d-pn-nuv" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="60" id="DkF-Pu-U8y"/>
+                <constraint firstItem="NUi-Eq-MDd" firstAttribute="top" secondItem="fML-R3-yDC" secondAttribute="bottom" constant="45" id="HTJ-0Z-0d1"/>
+                <constraint firstAttribute="trailing" secondItem="Rjy-1Y-GqL" secondAttribute="trailing" constant="16" id="Qf3-RR-l68"/>
+                <constraint firstItem="fML-R3-yDC" firstAttribute="top" secondItem="Rjy-1Y-GqL" secondAttribute="top" id="Qfd-hA-bMy"/>
+                <constraint firstItem="7t8-Pd-Dy6" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="81" id="TbX-Zd-M1T"/>
+                <constraint firstItem="enl-M6-IB0" firstAttribute="top" secondItem="k5d-pn-nuv" secondAttribute="bottom" constant="30" id="W9g-Ae-cFn"/>
+                <constraint firstAttribute="bottom" secondItem="7t8-Pd-Dy6" secondAttribute="bottom" constant="79" id="X1q-7I-gjq"/>
+                <constraint firstItem="fML-R3-yDC" firstAttribute="bottom" secondItem="Rjy-1Y-GqL" secondAttribute="bottom" id="bfU-wk-PPW"/>
+                <constraint firstAttribute="trailing" secondItem="enl-M6-IB0" secondAttribute="trailing" constant="30" id="by2-wd-em8"/>
+                <constraint firstItem="7t8-Pd-Dy6" firstAttribute="top" secondItem="NUi-Eq-MDd" secondAttribute="bottom" constant="16" id="fCX-f1-lg0"/>
+                <constraint firstItem="k5d-pn-nuv" firstAttribute="centerX" secondItem="NUi-Eq-MDd" secondAttribute="centerX" id="jVg-Lp-haD"/>
+                <constraint firstItem="fML-R3-yDC" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="vQg-6b-ZP1"/>
+                <constraint firstItem="NUi-Eq-MDd" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="w0d-gv-Lkm"/>
+                <constraint firstItem="7t8-Pd-Dy6" firstAttribute="top" secondItem="k5d-pn-nuv" secondAttribute="bottom" constant="6" id="wCi-yA-DZH"/>
+                <constraint firstAttribute="bottom" secondItem="enl-M6-IB0" secondAttribute="bottom" constant="38" id="zjI-dN-fOg"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Dot.png" width="648" height="648"/>
+        <image name="EditIcon.png" width="512" height="512"/>
+    </resources>
+</document>

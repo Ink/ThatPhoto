@@ -11,4 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #define DEVICE_IS_IPAD     (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    #define DEVICE_SPECIFIC_NIB(nibname) (DEVICE_IS_IPAD ? @#nibname @"_iPad" : @#nibname @"_iPhone")
+    #define DEVICE_SPECIFIC_NIB2(nibname) (DEVICE_IS_IPAD ? @#nibname @"" : @#nibname @"_iPhone")
 #endif
